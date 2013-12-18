@@ -1,0 +1,84 @@
+
+\pagebreak
+\section*{Tydzień 4}
+Analiza częstotliwościowa systemów dynamicznych
+\subsection*{Zadanie 4.1.2} {\color{darkgray}
+Układ jest opisany równaniami stanu w postaci\\\\
+$\begin{cases} \dot{x}(t)=Ax(t)+Bu(t)\\y(t)=Cx(t)\end{cases}$\\\\
+z macierzami\\\\
+$A=\left[\begin{array}{cc}2&0\\-5&0\end{array}\right],
+B=\left[\begin{array}{c}2\\2\end{array}\right],
+C=\left[\begin{array}{cc}
+0&1
+\end{array}\right]
+$\\\\
+Znaleźć transmitancję operatorową tego układu przy założeniu zerowych warunków początkowych $x(0)=0$\\\\
+Rozwiązanie:\\
+$G(s)=C(sI-A)^{-1}B$\\
+$G(s)=\left[\begin{array}{cc}0&1\end{array}\right]
+\cdot
+\left[\begin{array}{cc}{s-2}&0\\5&s\end{array}\right]^{-1}
+\cdot
+\left[\begin{array}{c}2\\2\end{array}\right]=\left[\begin{array}{cc}0&1\end{array}\right]
+\cdot 
+\left[\begin{array}{cc}{\frac{1}{s-2}}&0\\-5&\frac{1}{s}\end{array}\right]
+\cdot
+\left[\begin{array}{c}2\\2\end{array}\right]=\frac{2}{s}-\frac{10}{s\cdot(s-2)}=\frac{2s-14}{s\dot{(s-2)}}
+$
+\pagebreak
+%------------------------------------------------------------------------------------------------------------
+\subsection*{Zadanie 4.6.2} {\color{darkgray}
+\begin{figure}[!h]
+\begin{tikzpicture}
+\draw[scale=0.8, transform shape]
+(0,0) to[american current source,l=$u(t)$] 
+(0,3) to[C,l=C,i=$i_c$] (3,3) to [european resistor,l=R] (3,0) -- (0,0);
+\draw[->] (3,0.5) -- (3,2) node[right,pos=.5] {$x_1=U_R$};
+\end{tikzpicture}
+\end{figure}
+\noindent Przeanalizować układ z rysunku i znaleźć równania opisujące ten układ. Za wyjście
+przyjąć napięcie na oporniku. Znaleźć transmitancję operatorową i widmową układu\\
+Zakladamy ze: $R=1000\Omega,C=1mF$\\\\
+Rozwiązanie:\\
+\noindent $\begin{cases}
+u(t)-u_c(t)-u_R(t)=0\\
+y(t)=u_R(t)
+\end{cases}$\\\\
+$\begin{cases}
+u(t)-u_c(t)-RC\dot{u_c}(t)=0\\
+y(t)=RC\dot{u_c}(t)
+\end{cases}$\\\\
+$\left.\begin{cases}
+u(t)=+u_c(t)+RC\dot{u_c}(t)\\
+y(t)=RC\dot{u_c}(t)
+\end{cases}\right|\mathscr{L}$\\
+$\begin{cases}
+U(s)=U_c(s)+sRC\cdot U_c(s)+u_c(0)\\
+Y(s)=sRC\cdot U_c(s)+u_c(0)
+\end{cases}$\\
+$G(s)=\frac{Y(s)}{U(s)}=\frac{sRC\cdot U_c(s)+u_c(0)}{U_c(s)+sRC\cdot U_c(s)+u_c(0)}=\frac{sRC\cdot U_c(s)}{U_c(s)+sRC\cdot U_c(s)}=\frac{\cancel{U_c(s)}\cdot sRC}{\cancel{U_c(s)}\cdot (sRC+1)}$\\\\
+Podstawiamy R i C\\
+$G(s)=\frac{s}{s+1}$\\
+$G(j\omega)=\frac{j\omega}{j\omega+1}=\frac{j\omega}{j\omega+1}\cdot \frac{1-j\omega}{1-j\omega}=\frac{j\omega+\omega^2}{1+\omega^2}=\frac{\omega^2}{\omega^2+1}+j\frac{\omega}{\omega^2+1}$
+%------------------------------------------------------------------------------------------------------------
+\pagebreak
+\subsection*{Zadanie 4.9.2} {\color{darkgray}
+Rozwiązanie równania różniczkowego\\\\
+$\ddot{x}(t)+\dot{x}(t)=-x(t)+12\sin({\omega t})$\\
+gdzie $x(0)=0$, ($\dot{x}(0)$ - w domysle), $t \geq 0$ ma postać\\\\
+$x(t)=f(t)+A\sin({\omega t})$\\
+znalezc takie $\omega$, dla którego A jest największe\\\\
+Rozwiązanie:\\
+$u(t)=\sin({\omega t})$\\
+$y(t)=x(t)$\\\\
+$\begin{cases} \ddot{x}(t)+\dot{x}(t)=-x(t)+12u(t)\\y(t)=x(t)\end{cases}$\\\\
+$\left.\begin{cases} u(t)=\frac{\ddot{x}(t)+\dot{x}(t)+x(t)}{12}\\y(t)=x(t)\end{cases}\right|\mathscr{L}$\\\\
+$\begin{cases} U(s)=\frac{s^2\cdot X(s)-s\cdot x(0)-\dot{x}(0)+sX(s)-x(0)+X(s)}{12}\\Y(s)=X(s)\end{cases}$\\\\
+$\begin{cases} U(s)=\frac{s^2\cdot X(s)+sX(s)+X(s)}{12}\\Y(s)=X(s)\end{cases}$\\\\\\
+$G(S)=\frac{Y(s)}{U(s)}=\frac{12\cdot \cancel{X(s)}}{\cancel{X(s)}\cdot (s^2+s+1)}=\frac{12}{s^2+s+1}$\\\\
+$G(j\omega)=\frac{12}{-\omega^2+j\omega+1}=-\frac{12\cdot \omega^2-12}{\omega^4-\omega^2+1}-j\frac{12\cdot \omega}{\omega^4-\omega^2+1}$
+$A_y=A_u\cdot ku(\omega)$\\
+$ku(\omega)=|G(j\omega)|=\sqrt{\left(\frac{12\cdot \omega^2-12}{\omega^4-\omega^2+1}\right)^2+\left(\frac{12\cdot \omega}{\omega^4-\omega^2+1}\right)^2}=12\cdot \sqrt{\frac{1}{\omega^4-\omega^2+1}}$\\\\\\
+$A_y$ będzie max., gdy $ku(\omega)$ będzie max., tj. $\sqrt{\omega^4-\omega^2+1}$ będzie min.
+$\omega \geq 0$, $min(\sqrt{\omega^4-\omega^2+1})$ dla $\omega=\frac{1}{\sqrt{2}}$
+%------------------------------------------------------------------------------------------------------------
