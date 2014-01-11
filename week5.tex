@@ -1,0 +1,159 @@
+\pagebreak
+\section*{Tydzień 5}
+Wprowadzenie do układów nieliniowych - Linearyzacja
+%###################                 5.1.1              #################################%
+\subsection*{Zadanie 5.1.1} {\color{darkgray}
+	Dany jest system dynamiczny\\
+	$\dot{x}(t)= \cos(x(t))e^{-x(t)^2}$\\
+	Wyznaczyć jego punkty równowagi i za pomocą I metody Lapunowa zbadać ich stabilność.
+}\\\\
+$\dot{x}(t)=\cos(x(t))e^{-x(t)^2}$\\
+$\dot{x}(t)=f(x(t))$\\
+$x_r$ jest punktem równowagi $ \Leftrightarrow f(x_r)=0$\\
+$f(x_r)=\cos(x_r)\cdot \underbrace{e^-x_r^2}_{<0}=0 \Rightarrow cos(x_r)=0 \Rightarrow x_r=\frac{\pi}{2}+k\pi, k \in \mathbb{Z}$\\
+$\boxed{\begin{aligned}
+\text{System zlinearyzowany: } \dot{x}(t)=J(x_r)x(t)\\
+J(x)=\left[ \begin{array}{ccc} 
+ \frac{\partial f_1}{\partial x_1}(x) & \cdots &  \frac{\partial f_1}{\partial x_n}(x)\\
+\vdots & \ddots & \vdots\\
+\frac{\partial f_n}{\partial x_1}(x) &\cdots & \frac{\partial f_n}{\partial x_n}(x) 
+  \end{array}\right] f(x)= \left[ \begin{array}{c}  f_1(x)   \\ \vdots \\ f_n(x)    \end{array}\right]
+\end{aligned}}$\\
+$J(x)=\frac{\partial f}{\partial x} = - \sin(x) \cdot e^{-x^2}+\cos(x) \cdot (-2xe^{-x^2})=-e^{-x^2}(\sin(x)+2x\cos(x))$\\
+$j(x_r)=\underbrace{-e^{-(\frac{\pi}{2}+k\pi)^2}}_{<0}(\underbrace{\sin(\frac{\pi}{2}+k\pi)}_{=1 \vee =-1})+\underbrace{2(\frac{\pi}{2}+k\pi)\cos(\frac{\pi}{2}+k\pi)}_{=0}$\\
+\\
+\fbox{\parbox{.5\linewidth}{
+\textbf{I metoda Lapunowa} \\
+Punkt równowagi, dla którego system zlinearyzowany jest asymptotycznie stabilny jesy lokalnie asymptotycznie stabilny. Jeżeli zaś chociaż jedna z wartości własnych macierzy systemu zlinearyzowanego ma dodatnią część rzeczywistą to punkt równowagi jest niestabilny.
+}}\\
+$\lambda = -e^{-(\frac{\pi}{2}+k\pi)^2}\cdot \sin(\frac{\pi}{2}+k\pi)$\\
+\textbf{niestabilny :}\\
+$ -e^{-(\frac{\pi}{2}+k\pi)^2}\cdot \sin(\frac{\pi}{2}+k\pi)>0 \Rightarrow \sin(\frac{\pi}{2}+k\pi)=-1 \Rightarrow x_r=\frac{\pi}{2}+(2k\pi+1)\pi,\ \  k \in \mathbb{Z}$\\
+(z Hurwitza)\\
+$-e^{-(\frac{\pi}{2}+k\pi)^2}\cdot \sin(\frac{\pi}{2}+k\pi)>0 \Rightarrow \sin(\frac{\pi}{2}+k\pi)= 1 \Rightarrow x_r=\frac{\pi}{2}+2k\pi,\ \  k \in \mathbb{Z}$\\
+$ \left[ \begin{array}{cc}    1&0 \\0&   e^{-(\frac{\pi}{2}+k\pi)^2}\cdot \sin(\frac{\pi}{2}+k\pi) \end{array}\right]$
+
+
+
+
+
+
+
+\pagebreak
+%###################                 5.2.1              #################################%
+\subsection*{Zadanie 5.2.1} {\color{darkgray}
+	Wyznaczyć punkty równowagi układu generatora synchronicznego, który jest systemem dynamicznym opisanym następującymi równaniami\\
+	$\dot{x}_1=x_2$\\
+	$\dot{x}_2=-Dx_2-\sin x_1 + \sin \delta_0$\\
+}\\\\
+$\begin{cases}\dot{x}_1=x_2 \\ \dot{x}_2=-Dx_2-\sin x_1 + \sin \delta_0 \end{cases}$\\
+$f(x)= \left[ \begin{array}{c}   x_2  \\  -Dx_2-\sin x_1 + \sin \delta_0  \end{array}\right]$\\
+$\left[ \begin{array}{c}   x_2  \\  -Dx_2-\sin x_1 + \sin \delta_0  \end{array}\right] = \left[ \begin{array}{c}  0\\0  \end{array}\right]$\\
+$x_2=0$\\
+$-\sin x_1 + \sin \delta_0 = 0 \Rightarrow \sin\delta_0=\sin x_1 \Rightarrow$\\
+$\Rightarrow x_1=\delta_0+2k\pi \ \ \vee\ \  x_1=-\delta_0+(2k+1)\pi, \ \ \ k \in \mathbb{Z}$\\
+
+
+
+\pagebreak
+%###################                 5.3.1              #################################%
+\subsection*{Zadanie 5.3.1} {\color{darkgray}
+	Dla jakich wartości parametru $\epsilon$ zerowy punkt równowagi układu zwanego oscylatorem Van der Pola będzie niestabilny\\
+	$\ddot{x}(t)-\epsilon(1-x(t)^2)\dot{x}(t)+x(t)=0$\\
+}\\\\
+$\begin{cases} x_1=x \\ x_2 =\dot{x} \end{cases} \begin{cases} \dot{x}_1=\dot{x}=x_2 \\ \dot{x}_2=\ddot{x}= \epsilon(1-x(t)^2) \cdot \dot{x}(t)-x(t)=\epsilon(1-x_1^2) \cdot x_2 - x_1 \end{cases}$\\
+$f(x)=\left[ \begin{array}{c}   x_2  \\  \epsilon(1-x_1^2) \cdot x_2 - x_1  \end{array}\right] = \left[ \begin{array}{c}  f_1(x)   \\ f_2(x)   \end{array}\right]$\\
+$\begin{cases} x_2=0 \\ \epsilon(1-x_1^2) \cdot x_2 - x_1 = 0\end {cases} \Rightarrow \begin{cases}x_2=0 \\ x_1 = 0 \end {cases} \ \ \ x_r = \left[ \begin{array}{c}     0\\0   \end{array}\right]$\\
+$J(x)=\left[ \begin{array}{cc}   0 &1  \\ -2\epsilon x_1 x_2 -1 & \epsilon(1-x_1^2)   \end{array}\right] \ \ \ \ \ \ \ 
+\left(\left[ \begin{array}{cc}    \frac{\partial f_1}{\partial x_1} &\frac{\partial f_1}{\partial x_2} \\ \frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2}   \end{array}\right]\right)$\\
+$J(x_r)= \left[ \begin{array}{cc}    0&1 \\-1 & \epsilon    \end{array}\right]$\\
+Z Lapunowa:\\
+$(- \lambda)(\epsilon - \lambda)+1 = \lambda^2 - \lambda \epsilon +1 = 0$\\
+$\Delta = \epsilon^2-4 \Rightarrow \lambda =\frac{\epsilon \pm \sqrt{\epsilon^2-4}}{2}$\\
+niestabilny: Jeżeli część rzeczywista $>0 \Rightarrow \frac{\epsilon}{2}>0 \Rightarrow \boxed{\epsilon >0}$\\
+asymptotycznie stabilny : $\left[ \begin{array}{cc}    -\epsilon & 0 \\ 1 & 1   \end{array}\right]$ Hurwitz $-\epsilon>0 \Rightarrow \boxed{\epsilon<0}$\\
+
+
+
+\pagebreak
+%###################                 5.4.1              #################################%
+\subsection*{Zadanie 5.4.1} {\color{darkgray}
+	Dla jakich wartości parametru $a$ linearyzacja przestaje spełniać warunki twierdzenia Grobmana-Hartmana dla układu opisanego równaniami:\\
+	$\dot{x_1}(t)=-x_2(t)+(a-x_1(t)^2-x_2(t)^2)x_1(t)$\\
+	$\dot{x_2}(t)=x_1(t)+(a-x_1(t)^2-x_2(t)^2)x_2(t)$\\
+}\\\\
+$\dot{x_1}(t)=-x_2(t)+(a-x_1(t)^2-x_2(t)^2)x_1(t)=f_1(x(t))$\\
+$\dot{x_2}(t)=x_1(t)+(a-x_1(t)^2-x_2(t)^2)x_2(t)=f_2(x(t))$\\
+$f(x)=\left[ \begin{array}{c}     f_1(x) \\ f_2(x)   \end{array}\right]$\\
+$\begin{cases} -x_2+(a-x_1^2-x_2^2)x_1=0 \\ x_1+(a-x_1^2-x_2^2)x_2=0\end{cases}  $\\
+Zauważamy, że albo $x_1=x_2=0$ albo dla $x_2 \neq 0 \wedge x_1 \neq 0$ :\\
+$\begin{cases} -\frac{x_2}{x_1}+(a-x_1^2-x_2^2)=0 \\ \frac{x_1}{x_2}+(a-x_1^2-x_2^2)=0\end{cases}  \Rightarrow \frac{-x_2}{x_1} = \frac{x_1}{x_2} \Rightarrow -x_2^2=x_1^2 \Rightarrow x_1=x_2=0$ (sprzeczność)\\
+więc $x_r=\left[ \begin{array}{c}     0\\0   \end{array}\right]$\\
+$J(x)=\left[ \begin{array}{cc}   a-3x_1^2-x_2^2 & -1-2x_2x_1 \\ 1-2x_1x_2 & a-x_1^2-3x_2^2    \end{array}\right]$\\
+$J(x_r)=\left[ \begin{array}{cc}    a & -1 \\ 1 & a    \end{array}\right]$\\
+z tw. Grobmana-Hartmana:\\
+$\begin{array}{ll}
+\det(j\omega I-J(x_r)) \neq 0, \ \ \ \omega \in \mathbb{R} & J(x_r)\text{ nie ma wartości własnych na osi urojonej}\\
+ \left| \begin{array}{cc}     j\omega-a& -1 \\ 1 & j\omega-a    \end{array}\right|=0 &  \left[ \begin{array}{cc}    a-\lambda & -1 \\ 1 & a- \lambda   \end{array}\right]\\
+(j\omega-a)^2+1=0 & (a-\lambda)^2+1=0\\
+j\omega-1= \pm j \Rightarrow \boxed{ a=0} & a^2-2a\lambda +\lambda^2+1 =0\\
+&\lambda^2-2a\lambda+a^2+1 = 0\\
+&\Delta=4a^2-4a^2-4\\
+&\sqrt{\Delta}=2i\\
+&\lambda=\frac{2a \pm 2i}{2} = a \pm i\\
+&\text{dla } a=0 \text{ wartości własne są na osi urojonej}
+\end{array}$\\
+
+
+\pagebreak
+%###################                 5.5.1              #################################%
+\subsection*{Zadanie 5.5.1} {\color{darkgray}
+	Dla jakich wartości parametru $a$ zerowy punkt równowagi układu opisanego równaniami\\
+	$\dot{x_1}(t)=x_2(t)+(a-x_1(t)^2-x_2(t)^2)x_1(t)$\\
+	$\dot{x_2}(t)=x_1(t)+(a-x_1(t)^2-x_2(t)^2)x_2(t)$\\
+	będzie niestabilny.
+}\\\\
+$\dot{x_1}(t)=x_2(t)+(a-x_1(t)^2-x_2(t)^2)x_1(t)=f_1(x(t))$\\
+$\dot{x_2}(t)=x_1(t)+(a-x_1(t)^2-x_2(t)^2)x_2(t)=f_2(x(t))$\\
+$f(x)= \left[ \begin{array}{cc}    f_1(x)\\f_2(x)    \end{array}\right]$\\
+$\begin{cases}x_2+(a-x_1^2-x_2^2)x_1=0 \\ x_1+(a-x_1^2-x_2^2)x_2=0\end{cases}$\\
+Zauważamy, że albo $x_1=x^2=0$ albo dla $x_1\neq 0 \wedge x_2 \neq 0 $ :\\
+$\begin{cases} \frac{x_2}{x_1}+(a-x_1^2-x_2^2)=0 \\ \frac{x_1}{x_2}+(a-x_1^2-x_2^2)=0\end{cases} 
+\Rightarrow \frac{x_2}{x_1}=\frac{x_1}{x_2} \Rightarrow 
+\begin{array}{c}x_2^2 = x_1^2 \\x_1=x_2 \vee x_1=-x_2 \end{array}$\\
+więc $\begin{array}{c}\text{\circled{1}}\\x_r\end{array}=\left[ \begin{array}{c} k\\k\end{array}\right] \vee
+\begin{array}{c}\text{\circled{2}}\\x_r\end{array}=\left[ \begin{array}{c} k\\-k\end{array}\right],  \ \ \ k \in \mathbb{R}$\\
+$J(x)=\left[ \begin{array}{cc}    a-3x_1^2 -x_2^2&  1-2x_2x_1 \\ 1-2x_1x_2 & a-x_1^2-3x_2^2  \end{array}\right]$\\
+$\begin{array}{lll}
+J( \begin{array}{c}\text{\circled{1}}\\x_r\end{array})= \left[ \begin{array}{cc}  a-4k^2 & 1-2k^2 \\1-2k^2 & a-4k^2 \end{array}\right] &\vee&
+J( \begin{array}{c}\text{\circled{2}}\\x_r\end{array})= \left[ \begin{array}{cc}  a-4k^2 & 1+2k^2 \\1+2k^2 & a-4k^2 \end{array}\right]\\
+(a-4k^2-\lambda)^2-(1-2k^2)^2=0         &\vee&       (a-4k^2-\lambda)^2-(1+2k^2)^2=0 \\
+(a-4k^2-\lambda-1+2k^2)(a-4k^2-\lambda+1-2k^2)=0 &\vee& (a-4k^2-\lambda-1-2k^2)(a-4k^2-\lambda+1+2k^2)=0 \\
+\lambda = a-1-2k^2 \vee \lambda=a+1-6k^2 &\vee& \lambda = a-1-6k^2 \vee \lambda=a+1-2k^2 \\
+niestebilny:&&\\
+Re \lambda >0 &&\\
+a-1-2k^2>0 \vee a+1-6k^2>0 &&a-1-6k^2>0 \vee a+1-2k^2>0\\
+\begin{array}{c}\text{\circled{1}}\\a>1+2k^2\end{array}
+\begin{array}{c}\text{\circled{2}}\\a>6k^2-1\end{array} && 
+\begin{array}{c}\text{\circled{3}}\\a>1+6k^2\end{array}
+\begin{array}{c}\text{\circled{4}}\\a>2k^2-1\end{array}
+\end{array}$\\
+odp. niestabilny dla $a>\circled{1} \vee a>\circled{2} \vee a>\circled{3} \vee a>\circled{4} $
+
+
+\pagebreak
+%###################                 5.6.1              #################################%
+\subsection*{Zadanie 5.6.1} {\color{darkgray}
+	Dla jakich wartości parametru $a$ zerowy punkt równowagi układu opisanego równaniami\\
+	$\dot{x_1}(t)=-x_2(t)+(a-x_1(t)^2-x_2(t)^2)x_1(t)$\\
+	$\dot{x_2}(t)=x_1(t)+(a-x_1(t)^2-x_2(t)^2)x_2(t)$\\
+	będzie asymptotycznie stabilny.
+}\\\\
+$\left[ \begin{array}{cc}     a-\lambda & -1 \\ 1 & a-\lambda   \end{array}\right]$\\
+$\lambda^2-2a\lambda+a^2+1=0$\\
+$\left[ \begin{array}{cc}   -2a & 0 \\ 1 & a^2+1    \end{array}\right]$\\
+Hurwitz\\
+$-2a>0 \Rightarrow a<0$\\
+$-2a(a^2+1)>0 \Rightarrow \boxed{a<0}$\\
+
+%  \left[ \begin{array}{c}     \\    \end{array}\right]

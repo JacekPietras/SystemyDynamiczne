@@ -1,4 +1,4 @@
-%& -job-name="[SD] Zadania v0.8"
+%& -job-name="[SD] Zadania v0.9"
 \documentclass[a4paper,10pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -24,6 +24,9 @@
 \definecolor{lightgray}{gray}{0.6}
 \sloppy 
 
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {\small{#1}};}}
+
 \begin{document}
 \noindent https://github.com/Jock69pl/SystemyDynamiczne.git\\
 \\
@@ -34,8 +37,9 @@ Potrzebni są też komentatorzy, chodzi o całkowicie łopatologiczny komentarz 
 Z tego przedmiotu jest egzamin, więc warto to zrobić
 
 
-\include{week3} % do tego pliku wrzucić tydzień po skończeniu prac nad nim
-\include{week4} % do tego pliku wrzucić tydzień po skończeniu prac nad nim
+\include{week3}
+\include{week4}
+\include{week5} 
 
 \pagebreak
 \section*{Autorzy:}
