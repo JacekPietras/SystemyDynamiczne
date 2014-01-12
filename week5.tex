@@ -20,11 +20,11 @@ J(x)=\left[ \begin{array}{ccc}
   \end{array}\right] f(x)= \left[ \begin{array}{c}  f_1(x)   \\ \vdots \\ f_n(x)    \end{array}\right]
 \end{aligned}}$\\
 $J(x)=\frac{\partial f}{\partial x} = - \sin(x) \cdot e^{-x^2}+\cos(x) \cdot (-2xe^{-x^2})=-e^{-x^2}(\sin(x)+2x\cos(x))$\\
-$j(x_r)=\underbrace{-e^{-(\frac{\pi}{2}+k\pi)^2}}_{<0}(\underbrace{\sin(\frac{\pi}{2}+k\pi)}_{=1 \vee =-1})+\underbrace{2(\frac{\pi}{2}+k\pi)\cos(\frac{\pi}{2}+k\pi)}_{=0}$\\
+$J(x_r)=\underbrace{-e^{-(\frac{\pi}{2}+k\pi)^2}}_{<0}(\underbrace{\sin(\frac{\pi}{2}+k\pi)}_{=1 \vee =-1})+\underbrace{2(\frac{\pi}{2}+k\pi)\cos(\frac{\pi}{2}+k\pi)}_{=0}=-e^{-(\frac{\pi}{2}+k\pi)^2} (\sin(\frac{\pi}{2}+k\pi))$\\
 \\
 \fbox{\parbox{.5\linewidth}{
 \textbf{I metoda Lapunowa} \\
-Punkt równowagi, dla którego system zlinearyzowany jest asymptotycznie stabilny jesy lokalnie asymptotycznie stabilny. Jeżeli zaś chociaż jedna z wartości własnych macierzy systemu zlinearyzowanego ma dodatnią część rzeczywistą to punkt równowagi jest niestabilny.
+Punkt równowagi, dla którego system zlinearyzowany jest asymptotycznie stabilny jest lokalnie asymptotycznie stabilny. Jeżeli zaś chociaż jedna z wartości własnych macierzy systemu zlinearyzowanego ma dodatnią część rzeczywistą to punkt równowagi jest niestabilny.
 }}\\
 $\lambda = -e^{-(\frac{\pi}{2}+k\pi)^2}\cdot \sin(\frac{\pi}{2}+k\pi)$\\
 \textbf{niestabilny :}\\
@@ -33,11 +33,31 @@ $ -e^{-(\frac{\pi}{2}+k\pi)^2}\cdot \sin(\frac{\pi}{2}+k\pi)>0 \Rightarrow \sin(
 $-e^{-(\frac{\pi}{2}+k\pi)^2}\cdot \sin(\frac{\pi}{2}+k\pi)>0 \Rightarrow \sin(\frac{\pi}{2}+k\pi)= 1 \Rightarrow x_r=\frac{\pi}{2}+2k\pi,\ \  k \in \mathbb{Z}$\\
 $ \left[ \begin{array}{cc}    1&0 \\0&   e^{-(\frac{\pi}{2}+k\pi)^2}\cdot \sin(\frac{\pi}{2}+k\pi) \end{array}\right]$
 
+\pagebreak
+%###################                 5.1.2              #################################%
+\subsection*{Zadanie 5.1.2} {\color{darkgray}
+	Dany jest system dynamiczny\\
+	$\dot{x}_1(t)=x_2(t)$\\
+	$\dot{x}_2(t)=-2x_1(t)-3x_1(t)^2-x_2(t)$\\
+	Wyznaczyć jego punkty równowagi i za pomocą I metody Lapunowa zbadać ich stabilność.
+}\\\\
+$J(x)=\left[ \begin{array}{cc}  0&1\\-2-6x_1 & -1   \end{array}\right]$\\
+$\begin{cases}x_2=0\\-2x_1-3x_1^2-x_2=0\end{cases}$\\
+$-2x_1-3x_1^2=0$\\
+$x_1(2+3x_1)=0$\\
+$x_1=0\ \  \vee \ \ x_1=-\frac23$\\
+$\begin{array}{lll}
+x_r= \left[ \begin{array}{c}   0\\0    \end{array}\right] &\ \ \ \vee \ \ \ & x_r= \left[ \begin{array}{c}   -\frac 23\\0    \end{array}\right] \\
+J(x_r)=\left[ \begin{array}{cc}  0&1\\-2&-1    \end{array}\right] && J(x_r)=\left[ \begin{array}{cc}   0&1\\2&-1    \end{array}\right]\\
+\left| \begin{array}{cc}  -\lambda & 1 \\-2&-1-\lambda    \end{array}\right|&&\left| \begin{array}{cc}  -\lambda & 1 \\2&-1-\lambda    \end{array}\right|\\
+=(-\lambda)(-1-\lambda)+2=\lambda^2+\lambda+2&&=(-\lambda)(-1-\lambda)-2=\lambda^2+\lambda-2\\
+\Delta=-7&&\Delta=9\\
+\lambda=-\frac 12 \pm \frac{\sqrt 7}{2}i&&\lambda=\frac{-1 \pm 3}{2}\\
+\lambda = -\frac 12 >0 \Rightarrow \text{Stabilny} && \lambda = 1 \ \ \vee \ \ \lambda=-2\\
+ && \lambda = 1 >0 \Rightarrow \text{Niestabilny}
+\end{array}$\\
 
-
-
-
-
+%\begin{array}{c}\text{\circled{2}}\\x_r\end{array}
 
 \pagebreak
 %###################                 5.2.1              #################################%
@@ -55,6 +75,49 @@ $\Rightarrow x_1=\delta_0+2k\pi \ \ \vee\ \  x_1=-\delta_0+(2k+1)\pi, \ \ \ k \i
 
 
 
+
+\pagebreak
+%###################                 5.2.2              #################################%
+\subsection*{Zadanie 5.2.2} {\color{darkgray}
+	Wyznaczyć punkty równowagi dla obwodu Chuy, który jest systemem dynamicznym opisanym następującymi równaniami:\\
+	$C_1\dot{x}_1(t)=-\frac 1R x_1(t)+\frac 1R x_2(t)-g(x_1(t))$\\
+	$C_2\dot{x}_2(t)= \frac 1R x_1(t) -\frac 1R x_2(t)+x_3(t)$\\
+	$L\dot{x}_3(t)=-x_2(t)-R_0x_3(t)$\\
+	przy czym $g(v)=g_1v+g_2v^3$
+}\\\\
+$\begin{cases} 
+-\frac{1}{RC_1}x_1+\frac{1}{RC_1}x_2-g_1x_1-g_2x_1^3\\
+\frac{1}{RC_2}x_1 -\frac{1}{RC_2}x_2+x_3=0\\
+-\frac 1Lx_2 -\frac{R_0}{L}x_3=0 \ \ \ \ \ \ \ \ \ \ \ \Rightarrow x_2=-R_0x_3
+\end{cases}$\\
+$\begin{cases} 
+g_1RC_1x_1+g_2RC_1x_1^3+x_1=-R_0x_3\\
+x_1+RC_2x_3=-R_0x_3\ \ \ \ \  \Rightarrow x_3=\frac{-x_1}{RC_2+R_0}\\
+x_2=-R_0x_3
+\end{cases}$\\
+z pierwszego i drugiego:\\
+$g_1RC_1x_1+g_2RC_1x_1^3=RC_2x_3$\\
+$g_1C_1x_1+g_2C_1x_1^3=C_2x_3$\\
+podstawiam $x_3$\\
+$g_1C_1x_1+g_2C_1x_1^3=\frac{-C_2x_1}{RC_2+R_0}$\\
+$g_1C_1x_1+x_1^3g_2C_1+\frac{C_2x_1}{RC_2+R_0}=0$\\
+$x_1^3g_2C_1+x_1(g_1C_1+\frac{C_2}{RC_2+R_0})=0$\\
+podstawiam pomocnicze zmienne:\\
+$a = g_2C_1, \ \ \ b=g_1C_1+\frac{C_2}{RC_2+R_0}$\\
+$ax_1^3+bx_1=0$\\
+$x_1(ax_1^2+b)=0$\\
+$\begin{array}{lll}   
+x_1=0 & \ \ \vee \ \ & ax_1^2+b=0\\
+&& \Delta = -4\\
+&&x_r \text{ to czas więc musi być rzeczywiste}
+ \end{array}$\\
+podstawiam $x_1=0$:\\
+$x_r=\left[ \begin{array}{c}   x_{1r}\\ x_{2r}\\x_{3r}   \end{array}\right]
+=\left[ \begin{array}{c}   x_{1}\\ x_{2}\\x_{3}   \end{array}\right]=\left[ \begin{array}{c}   0\\0\\0   \end{array}\right]$
+
+
+
+
 \pagebreak
 %###################                 5.3.1              #################################%
 \subsection*{Zadanie 5.3.1} {\color{darkgray}
@@ -65,7 +128,7 @@ $\begin{cases} x_1=x \\ x_2 =\dot{x} \end{cases} \begin{cases} \dot{x}_1=\dot{x}
 $f(x)=\left[ \begin{array}{c}   x_2  \\  \epsilon(1-x_1^2) \cdot x_2 - x_1  \end{array}\right] = \left[ \begin{array}{c}  f_1(x)   \\ f_2(x)   \end{array}\right]$\\
 $\begin{cases} x_2=0 \\ \epsilon(1-x_1^2) \cdot x_2 - x_1 = 0\end {cases} \Rightarrow \begin{cases}x_2=0 \\ x_1 = 0 \end {cases} \ \ \ x_r = \left[ \begin{array}{c}     0\\0   \end{array}\right]$\\
 $J(x)=\left[ \begin{array}{cc}   0 &1  \\ -2\epsilon x_1 x_2 -1 & \epsilon(1-x_1^2)   \end{array}\right] \ \ \ \ \ \ \ 
-\left(\left[ \begin{array}{cc}    \frac{\partial f_1}{\partial x_1} &\frac{\partial f_1}{\partial x_2} \\ \frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2}   \end{array}\right]\right)$\\
+{\color{lightgray}\boxed{\left[ \begin{array}{cc}    \frac{\partial f_1}{\partial x_1} &\frac{\partial f_1}{\partial x_2} \\ \frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2}   \end{array}\right]}}$\\
 $J(x_r)= \left[ \begin{array}{cc}    0&1 \\-1 & \epsilon    \end{array}\right]$\\
 Z Lapunowa:\\
 $(- \lambda)(\epsilon - \lambda)+1 = \lambda^2 - \lambda \epsilon +1 = 0$\\
@@ -113,11 +176,23 @@ j\omega-1= \pm j \Rightarrow \boxed{ a=0} & a^2-2a\lambda +\lambda^2+1 =0\\
 	$\dot{x_2}(t)=x_1(t)+(a-x_1(t)^2-x_2(t)^2)x_2(t)$\\
 	będzie niestabilny.
 }\\\\
+$x_r=\left[ \begin{array}{c}     0\\0   \end{array}\right]$\\
+$J(x)=\left[ \begin{array}{cc}    a-3x_1^2 -x_2^2&  1-2x_2x_1 \\ 1-2x_1x_2 & a-x_1^2-3x_2^2  \end{array}\right]$\\
+$J(x_r)=\left[ \begin{array}{cc}    a&1\\1&a  \end{array}\right]$\\
+$\left| \begin{array}{cc}    a-\lambda&1\\1&a-\lambda  \end{array}\right| =0$\\
+$(a-\lambda)^2-1=0$\\
+$(a-\lambda-1)(a-\lambda+1)=0$\\
+$\lambda=a-1 \ \ \ \vee \ \ \ \lambda=a+1$\\
+niestabilny, gdy $Re(\lambda)>0$\\
+$\begin{array}{lll}     a-1>0& \ \ \  &a+1>0  \\ a>1 && a>-1 \end{array}$\\
+$(a>1 \ \ \vee \ \ a>-1 ) \Rightarrow \boxed{a>-1}$\\
+\\
+{\color{red} \textbf{ Alternatywnie: Bez podanego punktu równowagi}}\\
 $\dot{x_1}(t)=x_2(t)+(a-x_1(t)^2-x_2(t)^2)x_1(t)=f_1(x(t))$\\
 $\dot{x_2}(t)=x_1(t)+(a-x_1(t)^2-x_2(t)^2)x_2(t)=f_2(x(t))$\\
 $f(x)= \left[ \begin{array}{cc}    f_1(x)\\f_2(x)    \end{array}\right]$\\
 $\begin{cases}x_2+(a-x_1^2-x_2^2)x_1=0 \\ x_1+(a-x_1^2-x_2^2)x_2=0\end{cases}$\\
-Zauważamy, że albo $x_1=x^2=0$ albo dla $x_1\neq 0 \wedge x_2 \neq 0 $ :\\
+Zauważamy, że albo $x_1=x_2=0$ albo dla $x_1\neq 0 \wedge x_2 \neq 0 $ :\\
 $\begin{cases} \frac{x_2}{x_1}+(a-x_1^2-x_2^2)=0 \\ \frac{x_1}{x_2}+(a-x_1^2-x_2^2)=0\end{cases} 
 \Rightarrow \frac{x_2}{x_1}=\frac{x_1}{x_2} \Rightarrow 
 \begin{array}{c}x_2^2 = x_1^2 \\x_1=x_2 \vee x_1=-x_2 \end{array}$\\
@@ -138,7 +213,28 @@ a-1-2k^2>0 \vee a+1-6k^2>0 &&a-1-6k^2>0 \vee a+1-2k^2>0\\
 \begin{array}{c}\text{\circled{3}}\\a>1+6k^2\end{array}
 \begin{array}{c}\text{\circled{4}}\\a>2k^2-1\end{array}
 \end{array}$\\
-odp. niestabilny dla $a>\circled{1} \vee a>\circled{2} \vee a>\circled{3} \vee a>\circled{4} $
+odp. niestabilny dla $a>\circled{1} \vee a>\circled{2} \vee a>\circled{3} \vee a>\circled{4} $\\
+
+
+
+\pagebreak
+%###################                 5.5.2              #################################%
+\subsection*{Zadanie 5.5.2} {\color{darkgray}
+	Dla jakich wartości parametru $a$ zerowy punkt równowagi układu opisanego równaniami\\
+	$\dot{x_1}(t)=-x_2(t)+(a-x_1(t)^2-x_2(t)^2)x_1(t)$\\
+	$\dot{x_2}(t)=x_1(t)+(a-x_1(t)^2-x_2(t)^2)x_2(t)$\\
+	będzie niestabilny.
+}\\\\
+$x_r=\left[ \begin{array}{c}     0\\0   \end{array}\right]$\\
+$J(x)=\left[ \begin{array}{cc}   a-3x_1^2-x_2^2 & -1-2x_2x_1 \\ 1-2x_1x_2 & a-x_1^2-3x_2^2    \end{array}\right]$\\
+$J(x_r)=\left[ \begin{array}{cc}    a & -1 \\ 1 & a    \end{array}\right]$\\
+$\left| \begin{array}{cc}     a-\lambda & -1 \\ 1 & a-\lambda   \end{array}\right|=0$\\
+$\lambda^2-2a\lambda+a^2+1=0$\\
+$\Delta=-4$\\
+$\lambda = \frac{2a \pm 2i}{2}=a \pm i$\\
+niestabilny, gdy $Re(\lambda)>0$\\
+$\boxed{a>0}$\\
+
 
 
 \pagebreak
@@ -149,10 +245,29 @@ odp. niestabilny dla $a>\circled{1} \vee a>\circled{2} \vee a>\circled{3} \vee a
 	$\dot{x_2}(t)=x_1(t)+(a-x_1(t)^2-x_2(t)^2)x_2(t)$\\
 	będzie asymptotycznie stabilny.
 }\\\\
-$\left[ \begin{array}{cc}     a-\lambda & -1 \\ 1 & a-\lambda   \end{array}\right]$\\
+$x_r=\left[ \begin{array}{c}     0\\0   \end{array}\right]$\\
+$J(x)=\left[ \begin{array}{cc}   a-3x_1^2-x_2^2 & -1-2x_2x_1 \\ 1-2x_1x_2 & a-x_1^2-3x_2^2    \end{array}\right]$\\
+$J(x_r)=\left[ \begin{array}{cc}    a & -1 \\ 1 & a    \end{array}\right]$\\
+$\left| \begin{array}{cc}     a-\lambda & -1 \\ 1 & a-\lambda   \end{array}\right|=0$\\
 $\lambda^2-2a\lambda+a^2+1=0$\\
-$\left[ \begin{array}{cc}   -2a & 0 \\ 1 & a^2+1    \end{array}\right]$\\
-Hurwitz\\
+\fbox{\parbox{.5\linewidth}{
+\textbf{Macierz Hurwitz'a} \\
+Wielomian charakterystyczny: $a_0\lambda^n+a_1\lambda^{n-1}+a_{n-1}\lambda+a_n$\\
+$\left[ \begin{array}{cccccc}  
+ a_1&a_3&a_5&a_7&\cdots&0\\
+ a_0&a_2&a_4&a_6&\cdots&0\\
+     0&a_1&a_3&a_5&\cdots&0\\
+     0&a_0&a_2&a_4&\cdots&0\\
+     0&    0&a_1&a_3&\cdots&0\\
+\vdots&\vdots&\vdots&\vdots&\ddots&\vdots\\
+0&0&0&0&\cdots&a_n
+ \end{array}\right]$\\
+}}\\\\\\
+$\left[ \begin{array}{cc}   -2a & 0 \\ 1 & a^2+1    \end{array}\right]$\\\\\\
+\fbox{\parbox{.5\linewidth}{
+\textbf{Kryterium Hurwitz'a} \\
+Jeśli wszystkie minory wiodące są większe od zera, to jest asymptotycznie stabilny.
+}}\\\\
 $-2a>0 \Rightarrow a<0$\\
 $-2a(a^2+1)>0 \Rightarrow \boxed{a<0}$\\
 
