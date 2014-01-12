@@ -86,24 +86,26 @@ $\Rightarrow x_1=\delta_0+2k\pi \ \ \vee\ \  x_1=-\delta_0+(2k+1)\pi, \ \ \ k \i
 	przy czym $g(v)=g_1v+g_2v^3$
 }\\\\
 $\begin{cases} 
--\frac{1}{RC_1}x_1+\frac{1}{RC_1}x_2-g_1x_1-g_2x_1^3\\
-\frac{1}{RC_2}x_1 -\frac{1}{RC_2}x_2+x_3=0\\
+-\frac{1}{RC_1}x_1+\frac{1}{RC_1}x_2-\frac{g_1}{C_1}x_1-\frac{g_2}{C_1}x_1^3=0\\
+\frac{1}{RC_2}x_1 -\frac{1}{RC_2}x_2+\frac{x_3}{C_2}=0\\
 -\frac 1Lx_2 -\frac{R_0}{L}x_3=0 \ \ \ \ \ \ \ \ \ \ \ \Rightarrow x_2=-R_0x_3
 \end{cases}$\\
 $\begin{cases} 
-g_1RC_1x_1+g_2RC_1x_1^3+x_1=-R_0x_3\\
-x_1+RC_2x_3=-R_0x_3\ \ \ \ \  \Rightarrow x_3=\frac{-x_1}{RC_2+R_0}\\
+g_1Rx_1+g_2Rx_1^3+x_1=x_2\\
+x_1+Rx_3=x_2\\
 x_2=-R_0x_3
 \end{cases}$\\
+z drugiego i trzeciego:\\
+$x_3=\frac{-x_1}{R+R_0}$\\
 z pierwszego i drugiego:\\
-$g_1RC_1x_1+g_2RC_1x_1^3=RC_2x_3$\\
-$g_1C_1x_1+g_2C_1x_1^3=C_2x_3$\\
-podstawiam $x_3$\\
-$g_1C_1x_1+g_2C_1x_1^3=\frac{-C_2x_1}{RC_2+R_0}$\\
-$g_1C_1x_1+x_1^3g_2C_1+\frac{C_2x_1}{RC_2+R_0}=0$\\
-$x_1^3g_2C_1+x_1(g_1C_1+\frac{C_2}{RC_2+R_0})=0$\\
+$g_1Rx_1+g_2Rx_1^3=Rx_3$\\
+$g_1x_1+g_2x_1^3=x_3$\\
+podstawiam $x_3$ z trzeciego:\\
+$g_1x_1+g_2x_1^3=\frac{-x_1}{R+R_0}$\\
+$g_1x_1+x_1^3g_2+\frac{x_1}{R+R_0}=0$\\
+$x_1^3g_2+x_1(g_1+\frac{1}{R+R_0})=0$\\
 podstawiam pomocnicze zmienne:\\
-$a = g_2C_1, \ \ \ b=g_1C_1+\frac{C_2}{RC_2+R_0}$\\
+$a = g_2, \ \ \ b=g_1+\frac{1}{R+R_0}$\\
 $ax_1^3+bx_1=0$\\
 $x_1(ax_1^2+b)=0$\\
 $\begin{array}{lll}   
