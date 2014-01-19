@@ -5,8 +5,9 @@ Wprowadzenie do układów nieliniowych - Linearyzacja
 \subsection*{Zadanie 5.1.1} {\color{darkgray}
 	Dany jest system dynamiczny\\
 	$\dot{x}(t)= \cos(x(t))e^{-x(t)^2}$\\
-	Wyznaczyć jego punkty równowagi i za pomocą I metody Lapunowa zbadać ich stabilność.
-}\\\\
+	Wyznaczyć jego punkty równowagi i za pomocą I metody Lapunowa zbadać ich stabilność.\\
+}\lineh
+\\\\
 $\dot{x}(t)=\cos(x(t))e^{-x(t)^2}$\\
 $\dot{x}(t)=f(x(t))$\\
 $x_r$ jest punktem równowagi $ \Leftrightarrow f(x_r)=0$\\
@@ -39,8 +40,9 @@ $ \left[ \begin{array}{cc}    1&0 \\0&   e^{-(\frac{\pi}{2}+k\pi)^2}\cdot \sin(\
 	Dany jest system dynamiczny\\
 	$\dot{x}_1(t)=x_2(t)$\\
 	$\dot{x}_2(t)=-2x_1(t)-3x_1(t)^2-x_2(t)$\\
-	Wyznaczyć jego punkty równowagi i za pomocą I metody Lapunowa zbadać ich stabilność.
-}\\\\
+	Wyznaczyć jego punkty równowagi i za pomocą I metody Lapunowa zbadać ich stabilność.\\
+}\lineh
+\\\\
 $J(x)=\left[ \begin{array}{cc}  0&1\\-2-6x_1 & -1   \end{array}\right]$\\
 $\begin{cases}x_2=0\\-2x_1-3x_1^2-x_2=0\end{cases}$\\
 $-2x_1-3x_1^2=0$\\
@@ -65,7 +67,8 @@ J(x_r)=\left[ \begin{array}{cc}  0&1\\-2&-1    \end{array}\right] && J(x_r)=\lef
 	Wyznaczyć punkty równowagi układu generatora synchronicznego, który jest systemem dynamicznym opisanym następującymi równaniami\\
 	$\dot{x}_1=x_2$\\
 	$\dot{x}_2=-Dx_2-\sin x_1 + \sin \delta_0$\\
-}\\\\
+}\lineh
+\\\\
 $\begin{cases}\dot{x}_1=x_2 \\ \dot{x}_2=-Dx_2-\sin x_1 + \sin \delta_0 \end{cases}$\\
 $f(x)= \left[ \begin{array}{c}   x_2  \\  -Dx_2-\sin x_1 + \sin \delta_0  \end{array}\right]$\\
 $\left[ \begin{array}{c}   x_2  \\  -Dx_2-\sin x_1 + \sin \delta_0  \end{array}\right] = \left[ \begin{array}{c}  0\\0  \end{array}\right]$\\
@@ -83,8 +86,9 @@ $\Rightarrow x_1=\delta_0+2k\pi \ \ \vee\ \  x_1=-\delta_0+(2k+1)\pi, \ \ \ k \i
 	$C_1\dot{x}_1(t)=-\frac 1R x_1(t)+\frac 1R x_2(t)-g(x_1(t))$\\
 	$C_2\dot{x}_2(t)= \frac 1R x_1(t) -\frac 1R x_2(t)+x_3(t)$\\
 	$L\dot{x}_3(t)=-x_2(t)-R_0x_3(t)$\\
-	przy czym $g(v)=g_1v+g_2v^3$
-}\\\\
+	przy czym $g(v)=g_1v+g_2v^3$\\
+}\lineh
+\\\\
 $\begin{cases} 
 -\frac{1}{RC_1}x_1+\frac{1}{RC_1}x_2-\frac{g_1}{C_1}x_1-\frac{g_2}{C_1}x_1^3=0\\
 \frac{1}{RC_2}x_1 -\frac{1}{RC_2}x_2+\frac{x_3}{C_2}=0\\
@@ -109,14 +113,27 @@ $a = g_2, \ \ \ b=g_1+\frac{1}{R+R_0}$\\
 $ax_1^3+bx_1=0$\\
 $x_1(ax_1^2+b)=0$\\
 $\begin{array}{lll}   
-x_1=0 & \ \ \vee \ \ & ax_1^2+b=0\\
-&& \Delta = -4\\
-&&x_r \text{ to czas więc musi być rzeczywiste}
+\circled{1} \ x_1=0 & \ \ \vee \ \ & ax_1^2+b=0\\
+&&\circled{2} \ x_1=\sqrt{\frac{-b}{a}} \ \ \vee \ \  \circled{3} \ x_1=-\sqrt{\frac{-b}{a}}
  \end{array}$\\
 podstawiam $x_1=0$:\\
 $x_r=\left[ \begin{array}{c}   x_{1r}\\ x_{2r}\\x_{3r}   \end{array}\right]
-=\left[ \begin{array}{c}   x_{1}\\ x_{2}\\x_{3}   \end{array}\right]=\left[ \begin{array}{c}   0\\0\\0   \end{array}\right]$
-
+=\left[ \begin{array}{c}   x_{1}\\ x_{2}\\x_{3}   \end{array}\right]$\\\\
+$\circled{1} \ x_r=\left[ \begin{array}{c}   0\\0\\0   \end{array}\right]$\\\\\\
+$\circled{2} \ x_r=\left[ \begin{array}{c}   
+	\sqrt{\frac{-g_1-\frac{1}{R+R_0}}{g_2}}\\
+\\
+	-R_0\frac{-\sqrt{\frac{-g_1-\frac{1}{R+R_0}}{g_2}}}{R+R_0}   \\
+\\
+	\frac{-\sqrt{\frac{-g_1-\frac{1}{R+R_0}}{g_2}}}{R+R_0}
+\end{array}\right]$\\\\\\
+$\circled{3} \ x_r=\left[ \begin{array}{c}   
+	-\sqrt{\frac{-g_1-\frac{1}{R+R_0}}{g_2}}\\
+\\
+	-R_0\frac{\sqrt{\frac{-g_1-\frac{1}{R+R_0}}{g_2}}}{R+R_0}   \\
+\\
+	\frac{\sqrt{\frac{-g_1-\frac{1}{R+R_0}}{g_2}}}{R+R_0}
+\end{array}\right]$
 
 
 
@@ -124,8 +141,9 @@ $x_r=\left[ \begin{array}{c}   x_{1r}\\ x_{2r}\\x_{3r}   \end{array}\right]
 %###################                 5.3.1              #################################%
 \subsection*{Zadanie 5.3.1} {\color{darkgray}
 	Dla jakich wartości parametru $\epsilon$ zerowy punkt równowagi układu zwanego oscylatorem Van der Pola będzie niestabilny\\
-	$\ddot{x}(t)-\epsilon(1-x(t)^2)\dot{x}(t)+x(t)=0$\\
-}\\\\
+	$\ddot{x}(t)-\epsilon(1-x(t)^2)\dot{x}(t)+x(t)=0$\\\\
+}\lineh
+\\\\
 $\begin{cases} x_1=x \\ x_2 =\dot{x} \end{cases} \begin{cases} \dot{x}_1=\dot{x}=x_2 \\ \dot{x}_2=\ddot{x}= \epsilon(1-x(t)^2) \cdot \dot{x}(t)-x(t)=\epsilon(1-x_1^2) \cdot x_2 - x_1 \end{cases}$\\
 $f(x)=\left[ \begin{array}{c}   x_2  \\  \epsilon(1-x_1^2) \cdot x_2 - x_1  \end{array}\right] = \left[ \begin{array}{c}  f_1(x)   \\ f_2(x)   \end{array}\right]$\\
 $\begin{cases} x_2=0 \\ \epsilon(1-x_1^2) \cdot x_2 - x_1 = 0\end {cases} \Rightarrow \begin{cases}x_2=0 \\ x_1 = 0 \end {cases} \ \ \ x_r = \left[ \begin{array}{c}     0\\0   \end{array}\right]$\\
@@ -145,8 +163,9 @@ asymptotycznie stabilny : $\left[ \begin{array}{cc}    -\epsilon & 0 \\ 1 & 1   
 \subsection*{Zadanie 5.4.1} {\color{darkgray}
 	Dla jakich wartości parametru $a$ linearyzacja przestaje spełniać warunki twierdzenia Grobmana-Hartmana dla układu opisanego równaniami:\\
 	$\dot{x_1}(t)=-x_2(t)+(a-x_1(t)^2-x_2(t)^2)x_1(t)$\\
-	$\dot{x_2}(t)=x_1(t)+(a-x_1(t)^2-x_2(t)^2)x_2(t)$\\
-}\\\\
+	$\dot{x_2}(t)=x_1(t)+(a-x_1(t)^2-x_2(t)^2)x_2(t)$\\\\
+}\lineh
+\\\\
 $\dot{x_1}(t)=-x_2(t)+(a-x_1(t)^2-x_2(t)^2)x_1(t)=f_1(x(t))$\\
 $\dot{x_2}(t)=x_1(t)+(a-x_1(t)^2-x_2(t)^2)x_2(t)=f_2(x(t))$\\
 $f(x)=\left[ \begin{array}{c}     f_1(x) \\ f_2(x)   \end{array}\right]$\\
@@ -176,8 +195,9 @@ j\omega-1= \pm j \Rightarrow \boxed{ a=0} & a^2-2a\lambda +\lambda^2+1 =0\\
 	Dla jakich wartości parametru $a$ zerowy punkt równowagi układu opisanego równaniami\\
 	$\dot{x_1}(t)=x_2(t)+(a-x_1(t)^2-x_2(t)^2)x_1(t)$\\
 	$\dot{x_2}(t)=x_1(t)+(a-x_1(t)^2-x_2(t)^2)x_2(t)$\\
-	będzie niestabilny.
-}\\\\
+	będzie niestabilny.\\
+}\lineh
+\\\\
 $x_r=\left[ \begin{array}{c}     0\\0   \end{array}\right]$\\
 $J(x)=\left[ \begin{array}{cc}    a-3x_1^2 -x_2^2&  1-2x_2x_1 \\ 1-2x_1x_2 & a-x_1^2-3x_2^2  \end{array}\right]$\\
 $J(x_r)=\left[ \begin{array}{cc}    a&1\\1&a  \end{array}\right]$\\
@@ -225,8 +245,9 @@ odp. niestabilny dla $a>\circled{1} \vee a>\circled{2} \vee a>\circled{3} \vee a
 	Dla jakich wartości parametru $a$ zerowy punkt równowagi układu opisanego równaniami\\
 	$\dot{x_1}(t)=-x_2(t)+(a-x_1(t)^2-x_2(t)^2)x_1(t)$\\
 	$\dot{x_2}(t)=x_1(t)+(a-x_1(t)^2-x_2(t)^2)x_2(t)$\\
-	będzie niestabilny.
-}\\\\
+	będzie niestabilny.\\
+}\lineh
+\\\\
 $x_r=\left[ \begin{array}{c}     0\\0   \end{array}\right]$\\
 $J(x)=\left[ \begin{array}{cc}   a-3x_1^2-x_2^2 & -1-2x_2x_1 \\ 1-2x_1x_2 & a-x_1^2-3x_2^2    \end{array}\right]$\\
 $J(x_r)=\left[ \begin{array}{cc}    a & -1 \\ 1 & a    \end{array}\right]$\\
@@ -245,8 +266,9 @@ $\boxed{a>0}$\\
 	Dla jakich wartości parametru $a$ zerowy punkt równowagi układu opisanego równaniami\\
 	$\dot{x_1}(t)=-x_2(t)+(a-x_1(t)^2-x_2(t)^2)x_1(t)$\\
 	$\dot{x_2}(t)=x_1(t)+(a-x_1(t)^2-x_2(t)^2)x_2(t)$\\
-	będzie asymptotycznie stabilny.
-}\\\\
+	będzie asymptotycznie stabilny.\\
+}\lineh
+\\\\
 $x_r=\left[ \begin{array}{c}     0\\0   \end{array}\right]$\\
 $J(x)=\left[ \begin{array}{cc}   a-3x_1^2-x_2^2 & -1-2x_2x_1 \\ 1-2x_1x_2 & a-x_1^2-3x_2^2    \end{array}\right]$\\
 $J(x_r)=\left[ \begin{array}{cc}    a & -1 \\ 1 & a    \end{array}\right]$\\

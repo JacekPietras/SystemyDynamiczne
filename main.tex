@@ -1,4 +1,4 @@
-%%& -job-name="[SD] Zadania v0.11"
+%%& -job-name="[SD] Zadania v0.14"
 \documentclass[a4paper,10pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -11,6 +11,7 @@
 \usepackage{enumerate}
 \usepackage{color}
 \usepackage{circuitikz}
+\tikzset{>=latex}
 
 \usepackage{siunitx}
 \usepackage{mathrsfs}
@@ -27,6 +28,8 @@
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=1pt] (char) {\small{#1}};}}
 
+\newcommand*\lineh{\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}}
+
 \begin{document}
 \noindent https://github.com/Jock69pl/SystemyDynamiczne.git\\
 \\
@@ -37,6 +40,7 @@ Potrzebni są też komentatorzy, chodzi o całkowicie łopatologiczny komentarz 
 Z tego przedmiotu jest egzamin, więc warto to zrobić
 
 
+\include{week1}
 \include{week3}
 \include{week4}
 \include{week5} 

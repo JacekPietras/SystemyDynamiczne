@@ -30,3 +30,5 @@
 *.vrb
 *.xdy
 *.tdo
+/Graph for Latex/Graph for Latex/nbproject/private/
+/Graph for Latex/Graph for Latex/build/

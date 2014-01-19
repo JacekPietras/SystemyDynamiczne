@@ -2,18 +2,38 @@
 \pagebreak
 \section*{Tydzień 4}
 Analiza częstotliwościowa systemów dynamicznych
+
+
+%###################                 4.1.1              #################################%
+\subsection*{Zadanie 4.1.1} {\color{darkgray}
+	Układ jest opisany równaniami stanu w postaci\\\\
+	$\begin{cases} \dot{x}(t)=Ax(t)+Bu(t)\\y(t)=Cx(t)\end{cases}$\\\\
+	z macierzami\\\\
+	$A=\left[\begin{array}{cc}1&0\\2&-3\end{array}\right],
+	B=\left[\begin{array}{c}1\\0\end{array}\right],
+	C=\left[\begin{array}{cc}	1&0\end{array}\right]
+	$\\\\
+	Znaleźć transmitancję operatorową tego układu przy założeniu zerowych warunków początkowych $x(0)=0$\\
+}\lineh
+\\\\
+$G(s)=C(sI-A)^{-1} \cdot B$\\
+$(sI-A)^{-1}=\left[\begin{array}{cc}s-1&0\\-2&s-3\end{array}\right]^{-1}=\frac{1}{(s-1)(s-3)}\left[\begin{array}{cc}s-3&0\\2&s-1\end{array}\right]=\left[\begin{array}{cc}\frac{1}{s-1}&0\\\frac{2}{(s-1)(s-3)}&\frac{1}{s-3}\end{array}\right]$\\
+$G(s)=\left[\begin{array}{cc}1&0\end{array}\right]\cdot\left[\begin{array}{cc}\frac{1}{s-1}&0\\\frac{2}{(s-1)(s-3)}&\frac{1}{s-3}\end{array}\right]\cdot \left[\begin{array}{c}1\\0\end{array}\right]=\left[\begin{array}{cc}\frac{1}{s-1}&0\end{array}\right] \cdot \left[\begin{array}{c}1\\0\end{array}\right]=\frac{1}{s-1}$\\
+
+
+
+%###################                 4.1.2              #################################%
+\pagebreak
 \subsection*{Zadanie 4.1.2} {\color{darkgray}
-Układ jest opisany równaniami stanu w postaci\\\\
-$\begin{cases} \dot{x}(t)=Ax(t)+Bu(t)\\y(t)=Cx(t)\end{cases}$\\\\
-z macierzami\\\\
-$A=\left[\begin{array}{cc}2&0\\-5&0\end{array}\right],
-B=\left[\begin{array}{c}2\\2\end{array}\right],
-C=\left[\begin{array}{cc}
-0&1
-\end{array}\right]
-$\\\\
-Znaleźć transmitancję operatorową tego układu przy założeniu zerowych warunków początkowych $x(0)=0$\\\\
-Rozwiązanie:\\
+	Układ jest opisany równaniami stanu w postaci\\\\
+	$\begin{cases} \dot{x}(t)=Ax(t)+Bu(t)\\y(t)=Cx(t)\end{cases}$\\\\
+	z macierzami\\\\
+	$A=\left[\begin{array}{cc}2&0\\-5&0\end{array}\right],
+	B=\left[\begin{array}{c}2\\2\end{array}\right],
+	C=\left[\begin{array}{cc}0&1\end{array}\right]$\\\\
+	Znaleźć transmitancję operatorową tego układu przy założeniu zerowych warunków początkowych $x(0)=0$\\
+}\lineh
+\\\\
 $G(s)=C(sI-A)^{-1}B$\\
 $G(s)=\left[\begin{array}{cc}0&1\end{array}\right]
 \cdot
@@ -25,21 +45,193 @@ $G(s)=\left[\begin{array}{cc}0&1\end{array}\right]
 \cdot
 \left[\begin{array}{c}2\\2\end{array}\right]=\frac{2}{s}-\frac{10}{s\cdot(s-2)}=\frac{2s-14}{s\dot{(s-2)}}
 $
+
+%###################                 4.1.3              #################################%
 \pagebreak
-%------------------------------------------------------------------------------------------------------------
-\subsection*{Zadanie 4.6.2} {\color{darkgray}
+\subsection*{Zadanie 4.1.3} {\color{darkgray}
+	Układ jest opisany równaniami stanu w postaci\\\\
+	$\begin{cases} \dot{x}(t)=Ax(t)+Bu(t)\\y(t)=Cx(t)\end{cases}$\\\\
+	z macierzami\\\\
+	$A=\left[\begin{array}{cc}2&3\\1&0\end{array}\right],
+	B=\left[\begin{array}{c}2\\5\end{array}\right],
+	C=\left[\begin{array}{cc}0&1\end{array}\right]$\\\\
+	Znaleźć transmitancję operatorową tego układu przy założeniu zerowych warunków początkowych $x(0)=0$\\
+}\lineh
+\\\\
+
+
+%###################                 4.2.1              #################################%
+\pagebreak
+\subsection*{Zadanie 4.2.1} {\color{darkgray}
+	Mając dana transmitancje $G(s)=\frac{5}{s+3}$ okreslić amplitudę sygnału wyjściowego, jesli na wejście podano:\\
+	a) $2\sin(4t+2 \pi)$\\
+	b) $-\sin(t)$\\
+	c) $0.1\cos(4t+\frac\pi 6)$\\
+}\lineh
+\\\\
+$G(s)=\frac{5}{s+3}$\\
+$A(\omega)=|G(j\omega)|$\\
+$u(t)=A_u\sin(\omega t+\varphi_u )$ - wejście\\
+$A_y=A(\omega) \cdot A_u$\\
+\\
+\textbf{a)}\\
+$2\sin(4t+2\pi)=u(t)$\\
+$A_u=2$\\
+$\omega=4$\\
+$A(\omega)=|\frac{5}{4j+3}|=|\frac{5(3-4j)}{9+16}|=|\frac{3-4j}{5}|=\sqrt{\frac{9}{25}+\frac{16}{25}}=1$\\
+$A_y=1 \cdot 2 = \boxed{2}$ \ \ \ \ \ \   {\color{lightgray}$A(\omega)=\frac{5}{\sqrt{16+9}}=1$}\\
+\\
+\textbf{b)}\\
+$-\sin(t)=u(t)$\\
+$A_u=-1$\\
+$\omega=1$\\
+$A(\omega)=|\frac{5}{j+3}|=|\frac{5(3-j)}{9+1}|=|\frac{3-j}{2}|=\sqrt{\frac 94+\frac 14}=\frac{\sqrt{10}}{2}$\\
+$A_y=-1 \cdot \frac{\sqrt{10}}{2}=\boxed{-\frac{\sqrt{10}}{2}}$\ \ \ \ \ \ \   {\color{lightgray}$A(\omega)=\frac{5}{\sqrt{9+1}}=\frac{\sqrt{10}}{2}$}\\
+\\
+\textbf{c)}\\
+$0.1\cos(4t+\frac\pi 6)=u(t)$\\
+$\cos(\frac\pi 2 - \alpha)=\sin \alpha \Rightarrow \cos(4t+\frac \pi 6 ) = \cos (\frac \pi 2 -(\frac{2\pi}{6} - 4t)= \sin(\frac{2\pi}{6}-4t)$\\
+$u(t)=\frac{1}{10}\sin(\frac \pi 3 - 4t)$\\
+$A_u = \frac{1}{10} \ \ \ \ \ \omega=-4$\\
+$A(\omega)=|\frac{5}{-4j+3}|=|\frac{5(3+4j)}{9+16}|=|\frac{3+4j}{5}|=\sqrt{\frac{9}{25}+\frac{16}{25}}=1$\\
+$A_y=1 \cdot \frac{1}{10} = \boxed{\frac{1}{10}}$ \ \ \ \ \ \   {\color{lightgray}$A(\omega)=\frac{5}{\sqrt{16+9}}=1$}\\
+
+
+%###################                 4.2.2              #################################%
+\pagebreak
+\subsection*{Zadanie 4.2.2} {\color{darkgray}
+	Mając dana transmitancje $G(s)=\frac{30}{s+2}$ okreslić amplitudę sygnału wyjściowego, jesli na wejście podano:\\
+	a) $\sin(t+\frac{2 \pi}{3})$\\
+	b) $0.5\sin(2t)$\\
+	c) $8\cos(3t+\frac{2\pi}{3})$\\
+}\lineh
+\\\\
+
+%###################                 4.3.1              #################################%
+\pagebreak
+\subsection*{Zadanie 4.3.1} {\color{darkgray}
+	Za pomocą transmitancji znaleźć odpowiedź układu 1 na skok jednostkowy, czyli funkcję postaci:\\
+	$u(t)=\begin{cases}0,t<0 \\ 1, t\geqslant 0 \end{cases}$\\
+	Zakladamy, że $x(0)=0$\\
+	$\dot{x}(t)=-4x(t)+8u(t)$\\
+	$y(t)=x(t)$\\
+}\lineh
+\\\\
+$\begin{cases}\dot{x}(t)=-4x(t)+8u(t)\\y(t)=x(t) \end{cases} \ \ \ \ \ \ \ \ \ x(0)=0$\\
+$C=1 \ \ \ A=-4 \ \ \ \ B=8$\\
+$G(s)=1 \cdot (s+4)^{-1} \cdot 8 = 8 \cdot \frac{1}{s+4}$\\
+$U(s)=\frac 1 s \ \ \ $\\ tw. Laplace'a dla skoku jednopstkowego
+$Y(s)=G(s) \cdot U(s)$\\
+$Y(s)=\frac{8}{s+4} \cdot \frac{1}{2} = \frac{2}{s} - \frac{2}{s+4}$\\
+$\frac{A}{s}+\frac{B}{s+4}=\frac{8}{s(s+4)}$\\
+$A(s+4)+Bs=8$\\
+$s(A+B)+4A=8$\\
+$A=2 \ \ \ B=-2$\\
+$\boxed{y(t)=-2e^{-4t}+2}$\\ 
+$\uparrow$\\
+odwrotne tw. Laplace'a\\
+$\mathcal{L}\{a\}=a\frac 1 s$\\
+$\mathcal{L}\{ae^{bt}\}=a\frac {1}{s-b}$\\
+
+%###################                 4.3.2              #################################%
+\pagebreak
+\subsection*{Zadanie 4.3.2} {\color{darkgray}
+	Za pomocą transmitancji znaleźć odpowiedź układu 1 na skok jednostkowy, czyli funkcję postaci:\\
+	$u(t)=\begin{cases}0,t<0 \\ 1, t\geqslant 0 \end{cases}$\\
+	Zakladamy, że $x(0)=0$\\
+	$\dot{x}(t)=5x(t)-3u(t)$\\
+	$y(t)=x(t)$\\
+}\lineh
+\\\\
+
+
+%###################                 4.4.1              #################################%
+\pagebreak
+\subsection*{Zadanie 4.4.1} {\color{darkgray}
+	Na układ o transmitancji operatorowej $G(s)=\frac{20}{s+10}$ podano sygnał sinusoidalny $2\sin(4.5t+\frac \pi 6)$. Obliczyć, jak zmieni się amplituda sygnału wyjściowego.\\
+}\lineh
+\\\\
+$A_u=2 \ \ \ \ \omega = 4.5=\frac 9 2$\\
+$A(\omega)=|\frac{20}{j \frac 9 2 + 10}|=|\frac{20(10-\frac 9 2 j)}{100+\frac{81}{4}}|=|\frac{80(10-\frac 9 2)j}{481}|=\sqrt{\frac{800^2+360^2}{481^2}}\approx 1.82$\\
+ {\color{lightgray}$A(\omega)=|\frac{20}{j\frac 9 2 +10}|=\frac{20}{\sqrt{100+\frac{81}{4}}}= \frac{40}{\sqrt{481}} \approx 1.82$}
+$A_y=A(\omega)\cdot 2$\\
+$\frac{A_y}{A_u}=A(\omega)$\\
+\\
+Amplituda sygnału wejśicowego będzie ok. 1.82 razy większa niż wejściowego\\
+
+%###################                 4.4.2              #################################%
+\pagebreak
+\subsection*{Zadanie 4.4.2} {\color{darkgray}
+	Na układ o transmitancji operatorowej $G(s)=\frac{400}{s+30}$ podano sygnał sinusoidalny $5\sin(2t+\frac \pi 3)$. Obliczyć, jak zmieni się amplituda sygnału wyjściowego.\\
+}\lineh
+\\\\
+
+
+%###################                 4.5.1              #################################%
+\pagebreak
+\subsection*{Zadanie 4.5.1} {\color{darkgray}
+	Narysowac charakterystyki Nyquista dla układu opisanego transmitancja operatorowa:\\
+	$G(s)=\frac{s+2}{s^2+3s+2}$\\
+	Podac wzór na transmitancje widmowa tego układu (w postaci rozbicia na czesc urojona i rzeczywistą).\\
+}\lineh
+\\\\
+$G(s)=\frac{s+2}{s^2+3s+2}=\frac{s+2}{(s+1)(s+2)}=\frac{1}{s+1}$\\
 \begin{figure}[!h]
 \begin{tikzpicture}
-\draw[scale=0.8, transform shape]
-(0,0) to[american current source,l=$u(t)$] 
-(0,3) to[C,l=C,i=$i_c$] (3,3) to [european resistor,l=R] (3,0) -- (0,0);
-\draw[->] (3,0.5) -- (3,2) node[right,pos=.5] {$x_1=U_R$};
+	\draw[color=red, thick](1,0) ellipse (1 and 1);
+	\filldraw[draw=white, fill=white](0,0)--(2,0)--(2,2)--(0,2)--cycle;=
+	\draw[color=red, draw opacity=0.1](1,0) ellipse (1 and 1);
+	
+	\draw[color=red] (1,-1) -- (1.2,-1.2);
+	\draw[color=red] (1,-1) -- (1.2,-0.8);
+
+	\draw[color=red!10!white] (1,1) -- (0.8,1.2);
+	\draw[color=red!10!white] (1,1) -- (0.8,0.8);
+
+
+	\draw[thick][->](-1,0)--(3,0) node [right=3pt]{$Re$};
+	\draw[thick][->](0,-2)--(0,2) node [right=3pt]{$Im$};
+
+	\node at(3.4,-1.2){tylko ta część bo $\omega>0$};
+
+	\draw (-0.1,-1) -- (0.1,-1) node [left=2pt]{{-0.5}};
+	\draw (-0.1,1) -- (0.1,1) node [left=2pt]{{ 0.5}};
+	\draw (2,-0.1) -- (2,0.1) node [below=4pt]{{ 1}};
 \end{tikzpicture}
 \end{figure}
-\noindent Przeanalizować układ z rysunku i znaleźć równania opisujące ten układ. Za wyjście
-przyjąć napięcie na oporniku. Znaleźć transmitancję operatorową i widmową układu\\
-Zakladamy ze: $R=1000\Omega,C=1mF$\\\\
-Rozwiązanie:\\
+\noindent\\
+$G(j\omega)=\frac{1}{j\omega+1}=\frac{1-j\omega}{1+\omega^2}=\boxed{\frac{1}{1+\omega^2}+j\frac{-\omega}{1+\omega^2}}$\\
+
+
+
+%###################                 4.5.2              #################################%
+\pagebreak
+\subsection*{Zadanie 4.5.2} {\color{darkgray}
+	Narysowac charakterystyki Nyquista dla układu opisanego transmitancja operatorowa:\\
+	$G(s)=\frac{2s}{3s^2+3s}$\\
+	Podac wzór na transmitancje widmowa tego układu (w postaci rozbicia na czesc urojona i rzeczywistą).\\
+}\lineh
+\\\\
+
+
+%###################                 4.6.1              #################################%
+\pagebreak
+\subsection*{Zadanie 4.6.1} {\color{darkgray}
+	\begin{figure}[!h]
+	\begin{tikzpicture}
+	\draw[scale=0.8, transform shape]
+	(0,0) to[american current source,l=$u(t)$] 
+	(0,3) to[C,l=C,i=$i_c$] (3,3) to [european resistor,l=R] (3,0) -- (0,0);
+	\draw[->] (3,0.5) -- (3,2) node[right,pos=.5] {$x_1=U_R$};
+	\draw (1,1) arc (240:-50:.3 and .3);
+	\draw[->] (1.35,1.04)  -- (1.25,.94) ;
+	\end{tikzpicture}	
+	\end{figure}
+	\noindent Przeanalizować układ z rysunku i znaleźć równania opisujące ten układ. Za wyjście
+	przyjąć napięcie na oporniku. Znaleźć transmitancję operatorową i widmową układu\\
+	Zakladamy ze: $R=1000\Omega,C=1mF$\\
+}\lineh
+\\\\
 \noindent $\begin{cases}
 u(t)-u_c(t)-u_R(t)=0\\
 y(t)=u_R(t)
@@ -52,6 +244,7 @@ $\left.\begin{cases}
 u(t)=+u_c(t)+RC\dot{u_c}(t)\\
 y(t)=RC\dot{u_c}(t)
 \end{cases}\right|\mathscr{L}$\\
+Transformata Laplace'a\\
 $\begin{cases}
 U(s)=U_c(s)+sRC\cdot U_c(s)+u_c(0)\\
 Y(s)=sRC\cdot U_c(s)+u_c(0)
@@ -60,15 +253,184 @@ $G(s)=\frac{Y(s)}{U(s)}=\frac{sRC\cdot U_c(s)+u_c(0)}{U_c(s)+sRC\cdot U_c(s)+u_c
 Podstawiamy R i C\\
 $G(s)=\frac{s}{s+1}$\\
 $G(j\omega)=\frac{j\omega}{j\omega+1}=\frac{j\omega}{j\omega+1}\cdot \frac{1-j\omega}{1-j\omega}=\frac{j\omega+\omega^2}{1+\omega^2}=\frac{\omega^2}{\omega^2+1}+j\frac{\omega}{\omega^2+1}$
-%------------------------------------------------------------------------------------------------------------
+
+
+
+%###################                 4.7.1              #################################%
+\pagebreak
+\subsection*{Zadanie 4.7.1} {\color{darkgray}
+	Niech będzie dany układ opisany transmitancją $G(s)$:\\
+	$G(s)=\frac{s}{s^2+2s+1}$\\
+	Korzystajac z kryterium Nyquista sprawdzić, czy układ zamkniety postaci 7 będzie asymptotycznie stabilny.
+\begin{figure}[!h]
+\begin{tikzpicture}
+	\draw(0,0)--(7,0);
+	\draw(1,0)--(1,-2)--(6,-2)--(6,0);
+	\filldraw[draw=black, fill=white](2,-1)--(5,-1)--(5,1)--(2,1)--cycle;
+	\draw[draw=black, fill=white] (1,0) circle (0.3);
+	\draw(0.8,-0.2)--(1.2,0.2);
+	\draw(0.8,0.2)--(1.2,-0.2);
+	\draw(0.3,-0.3)--(0.6,-0.3);
+	\draw(0.45,-0.15)--(0.45,-0.45);
+	\draw(1.4,-0.3)--(1.7,-0.3);
+	\node at (0.3,.3) {$U(s)$};
+	\node at (6.3,.3) {$Y(s)$};
+	\node at (3.5,0) {$G(s)$};
+\end{tikzpicture}
+\end{figure}
+
+}\lineh
+\\\\
+$G(s)=\frac{s}{s^2+2s+1}$\\
+$a_2=1 \ \ a_1 =2 \ \ a_0 = 1$\\
+Układ zamknięty będzie asymptotycznie stabilny jeżeli układ otwarty będzie asymptotycznie stabilny oraz wykres charakterystyki amplitudowo-fazowej transformacji $G(s)$ nie będzie obejmował punktu (-1, 0) na płaszczyźnie zespolonej.\\
+sprawdź czy układ otwarty jest asymptotycznie stabilny z Hurwitza. Wystarczy sprawdzić dla $s^2+2s+1$\\
+$
+\begin{array}{c}
+\begin{array}{cc}a_1 & a_3\end{array}\\
+\left[\begin{array}{cc}2&0\\1&1\end{array}\right]\\
+\begin{array}{cc}a_0&a_2\end{array}
+\end{array}
+$\\
+$2>0$\\
+$2\cdot 1-0>0$\\
+więc układ otwarty jest asymptotycznie stabilny.
+\begin{figure}[!h]
+\begin{tikzpicture}
+	\draw[color=red, thick](1,0) ellipse (1 and 1);
+	\filldraw[draw=white, fill=white](0,0)--(2,0)--(2,-2)--(0,-2)--cycle;
+	\draw[color=red, draw opacity=0.1](1,0) ellipse (1 and 1);
+	
+	\draw[color=red!10!white] (1,-1) -- (1.2,-1.2);
+	\draw[color=red!10!white] (1,-1) -- (1.2,-0.8);
+
+	\draw[color=red] (1,1) -- (0.8,1.2);
+	\draw[color=red] (1,1) -- (0.8,0.8);
+
+
+	\draw[thick][->](-1,0)--(3,0) node [right=3pt]{$Re$};
+	\draw[thick][->](0,-2)--(0,2) node [right=3pt]{$Im$};
+
+	\node at(3.2,1){tylko górna część};
+
+	\draw (-0.1,-1) -- (0.1,-1) node [left=2pt]{{-0.25}};
+	\draw (-0.1,1) -- (0.1,1) node [left=2pt]{{0.25}};
+	\draw (2,-0.1) -- (2,0.1) node [below=4pt]{{0.5}};
+\end{tikzpicture}
+\end{figure}
+\noindent\\
+Nie obejmuje punktu (-1,0) więc jest asymptotycznie stabilny.\\
+$G(j\omega)=\frac{j\omega}{(j\omega)^2+2j\omega+1}=\frac{j\omega}{-\omega^2+2j\omega+1}=\frac{j\omega(1-\omega^2-2j\omega)}{(1-\omega^2+2j\omega)(1-\omega^2-2j\omega)}=\frac{j\omega-j\omega^3+2\omega^2}{1-2\omega^2+\omega^4+4\omega^2}=\frac{2\omega^2}{(\omega^2+1)^2}+j\frac{\omega-\omega^3}{(\omega^2+1)^2}$\\
+
+%###################                 4.7.2              #################################%
+\pagebreak
+\subsection*{Zadanie 4.7.2} {\color{darkgray}
+	Niech będzie dany układ opisany transmitancją $G(s)$:\\
+	$G(s)=\frac{s^2+s+1}{s^3-s^2+2s-2}$\\
+	Korzystajac z kryterium Nyquista sprawdzić, czy układ zamkniety postaci 7 będzie asymptotycznie stabilny.
+\begin{figure}[!h]
+\begin{tikzpicture}
+	\draw(0,0)--(7,0);
+	\draw(1,0)--(1,-2)--(6,-2)--(6,0);
+	\filldraw[draw=black, fill=white](2,-1)--(5,-1)--(5,1)--(2,1)--cycle;
+	\draw[draw=black, fill=white] (1,0) circle (0.3);
+	\draw(0.8,-0.2)--(1.2,0.2);
+	\draw(0.8,0.2)--(1.2,-0.2);
+	\draw(0.3,-0.3)--(0.6,-0.3);
+	\draw(0.45,-0.15)--(0.45,-0.45);
+	\draw(1.4,-0.3)--(1.7,-0.3);
+	\node at (0.3,.3) {$U(s)$};
+	\node at (6.3,.3) {$Y(s)$};
+	\node at (3.5,0) {$G(s)$};
+\end{tikzpicture}
+\end{figure}
+
+}\lineh
+\\\\
+
+
+%###################                 4.8.1              #################################%
+\pagebreak
+\subsection*{Zadanie 4.8.1} {\color{darkgray}
+	Rozwiązanie równania różniczkowego\\
+	$\dot{x}(t)=-4x(t)+3\sin(2t)$\\
+	gdzie $x(0)=0, t \geqslant 0$ ma postać\\
+	$x(t)=ae^{-4t}+A\sin(2t+\varphi)$\\
+	Obliczyć $A$ i $\varphi$.\\
+}\lineh
+\\\\
+$u(t)=3\sin(2t)$\\
+$A_u=3 \ \ \ \ \omega = 2 \ \ \ \ y_u=0$\\
+$A=-4 \ \ \ B=3 \ \ \ \ C=1$\\
+$G(s)=1\cdot(s+4)^{-1} \cdot 3=3 \cdot \frac{1}{s+4}$\\
+$A(\omega)=|\frac{3}{2j+4}|=\frac{3}{\sqrt{16+4}}=\frac{3}{2\sqrt{5}}=\frac{3\sqrt{5}}{10}$\\
+$A_y=3\cdot A(\omega)=\frac{9\sqrt{5}}{10}$\\
+$\varphi_y=\arg G(j\omega)+\varphi_u$\\
+$G(j\omega)=\frac{3}{2j+4}=\frac{3(4-2j)}{20}=\frac 3 5 -\frac{3}{10}j$\\
+\fbox{\parbox{.24\linewidth}{
+argument liczby $a+bi$ :\\
+$\varphi=\begin{cases} \text{arctg}(\frac{b}{a}), a>0 \\ \text{arctg}(\frac ba)+\pi,a<0\end{cases}$
+}}\\\\
+$\arg G(j\omega)=\text{arctg}(-\frac{3}{10} \cdot \frac{5}{3})=\boxed{\text{arctg}(-\frac{1}{2})}$\\
+
+%###################                 4.8.2              #################################%
+\pagebreak
+\subsection*{Zadanie 4.8.2} {\color{darkgray}
+	Rozwiązanie równania różniczkowego\\
+	$\dot{x}(t)=-x(t)+10\sin(5t+\frac\pi 3)$\\
+	gdzie $x(0)=0, t \geqslant 0$ ma postać\\
+	$x(t)=ae^{-4t}+A\sin(5t+\varphi)$\\
+	Obliczyć $A$ i $\varphi$.\\
+}\lineh
+\\\\
+
+%###################                 4.9.1              #################################%
+\pagebreak
+\subsection*{Zadanie 4.9.1} {\color{darkgray}
+	Rozwiązanie równania różniczkowego\\
+	$\ddot{x}(t)+\dot{x}(t)=-4x(t)+3\sin({\omega t})$\\
+	gdzie $x(0)=0$, ($\dot{x}(0)$ - w domysle), $t \geq 0$ ma postać\\
+	$x(t)=f(t)+A\sin({\omega t+\varphi})$\\
+	znaleźć takie $\omega$, dla którego $A$ jest największe\\
+}\lineh
+\\\\
+$\ddot{x}(t)+\dot{x}(t)+4x(t)=3\sin({\omega t})$\\
+$u(t)=\sin(\omega t)=\frac{\ddot{x}(t)+\dot{x}(t)+4x(t)}{3}$\\
+$Y(s)=G(s)\cdot U(s) \Rightarrow G(s)=\frac{Y(s)}{U(s)}$\\
+Transformata Laplace'a\\
+$X(s)=Y(s)$\\
+\fbox{\parbox{.3\linewidth}{
+	$\mathcal{L}\{f'\}=s\mathcal{L}\{f\}-f(0^+)$\\
+	$\mathcal{L}\{f''\}=s^2\mathcal{L}\{f\}-sf(0^+)-f'(0^+)$
+}}\\\\
+$U(s)=\frac{s^2X(s)-s\cdot x(0)-\dot{x}(0)+sX(s)-x(0)+4X(s)}{3}=\frac{X(s)(s^2+s+4)}{3}$\\
+$G(s)=\frac{X(s)}{\frac{X(s)(s^2+s+4)}{3}}=\frac{3 \cancel{X(s)}}{ \cancel{X(s)}(s^2+s+4)}=\frac{3}{s^2+s+4}$\\
+$A=\underbrace{A_y}_{\text{wyjście}}=\underbrace{A_u}_{\text{wejście}} \cdot A(\omega)$\\
+$A(\omega)=|G(\omega j)|$\\
+$A$ będzie maksymalne dla $|G(\omega j)|$ maksymalnego\\
+$|G(\omega j)| = |\frac{3}{-\omega^2+j\omega+4}|=|\frac{3}{\sqrt{(4-\omega^2)^2+\omega^2}}|=|\frac{3}{\sqrt{16-8\omega^2+\omega^4+\omega^2}}|=|\frac{3}{\sqrt{\omega^4-7\omega^2+16}}|$\\
+$\frac{3}{\sqrt{\omega^4-7\omega^2+16}}$ maksymalne $\Leftrightarrow \sqrt{\omega^4-7\omega^2+16}$ minimalne\\
+$z=\omega^2$\\
+szukamy min funkcji $z^2-7z+16$\\
+dodatni znak przy $z^2$, więc minimum będzie na wierzchołku, czyli $x_w=\frac{-b}{2a}=\frac 72$\\
+$\omega=\sqrt\frac 72 \ \ \ \vee \ \ \ \omega=-\sqrt\frac 72$\\
+$\omega=-\sqrt\frac 72$ odpada, bo nie może być $<0$\\
+$\boxed{\omega=\sqrt\frac 72}$\\
+
+
+
+
+
+%###################                 4.9.2              #################################%
 \pagebreak
 \subsection*{Zadanie 4.9.2} {\color{darkgray}
-Rozwiązanie równania różniczkowego\\\\
-$\ddot{x}(t)+\dot{x}(t)=-x(t)+12\sin({\omega t})$\\
-gdzie $x(0)=0$, ($\dot{x}(0)$ - w domysle), $t \geq 0$ ma postać\\\\
-$x(t)=f(t)+A\sin({\omega t})$\\
-znalezc takie $\omega$, dla którego A jest największe\\\\
-Rozwiązanie:\\
+	Rozwiązanie równania różniczkowego\\
+	$\ddot{x}(t)+\dot{x}(t)=-x(t)+12\sin({\omega t})$\\
+	gdzie $x(0)=0$, ($\dot{x}(0)$ - w domysle), $t \geq 0$ ma postać\\
+	$x(t)=f(t)+A\sin({\omega t})$\\
+	znaleźć takie $\omega$, dla którego $A$ jest największe\\
+}\lineh
+\\\\
 $u(t)=\sin({\omega t})$\\
 $y(t)=x(t)$\\\\
 $\begin{cases} \ddot{x}(t)+\dot{x}(t)=-x(t)+12u(t)\\y(t)=x(t)\end{cases}$\\\\
@@ -81,4 +443,75 @@ $A_y=A_u\cdot ku(\omega)$\\
 $ku(\omega)=|G(j\omega)|=\sqrt{\left(\frac{12\cdot \omega^2-12}{\omega^4-\omega^2+1}\right)^2+\left(\frac{12\cdot \omega}{\omega^4-\omega^2+1}\right)^2}=12\cdot \sqrt{\frac{1}{\omega^4-\omega^2+1}}$\\\\\\
 $A_y$ będzie max., gdy $ku(\omega)$ będzie max., tj. $\sqrt{\omega^4-\omega^2+1}$ będzie min.
 $\omega \geq 0$, $min(\sqrt{\omega^4-\omega^2+1})$ dla $\omega=\frac{1}{\sqrt{2}}$
-%------------------------------------------------------------------------------------------------------------
+
+
+%###################                 4.9.3              #################################%
+\pagebreak
+\subsection*{Zadanie 4.9.3} {\color{darkgray}
+	Rozwiązanie równania różniczkowego\\
+	$\ddot{x}(t)+\dot{x}(t)=-5x(t)+15\sin({\omega t})$\\
+	gdzie $x(0)=0$, ($\dot{x}(0)$ - w domysle), $t \geq 0$ ma postać\\
+	$x(t)=f(t)+A\sin({\omega t+\varphi})$\\
+	znaleźć takie $\omega$, dla którego $A$ jest największe\\
+}\lineh
+\\\\
+
+%###################                 4.10.1              #################################%
+\pagebreak
+\subsection*{Zadanie 4.10.1} {\color{darkgray}
+	Korzystając z kryterium Michajłowa zbadać stabilność asymptotyczną układu opisanego transmitancją $G(s)$:\\
+	$G(s)=\frac{s^2+3s+1}{s^3+s^2-4s+9}$\\
+}\lineh
+\\\\
+\fbox{\parbox{.6\linewidth}{
+	\textbf{Kryterium Michajłowa}\\
+	$G(s)=\frac{L(s)}{M(s)}$\\
+	$M(s)=a_ns^n+a_{n-1}s^{n-1}+...+a_1s+a_0$\\
+	Układ jest asymptotycznie stabilny jeśli przyrost argumentu $M(j\omega)$ rzędu $n$ przy zmianie $\omega$ od $-\infty$ do $+\infty$ wynosi $n\pi$: $\Delta Arg \ M(j\omega)|^{+\infty}_{-\infty}=n\pi$\\
+}}\\\\
+Ponieważ funkcja $M(j\omega)$ jest symetryczna względem osi rzeczywistej, więc wystarczy $\Delta Arg \ M(j\omega)|^{+\infty}_0=n\frac\pi 2$\\
+inna postać kryterium (wynikająca z powyższego):
+wystarczy pokazać, że charakterystyka częstotliwościowa funkcji $M(j\omega) \ \ 0<\omega <\infty$ przechodzi przez $n$ ćwiartek w kierunku dodatnim.\\
+$n=3$ więc musi przechodzić przez I, II i III ćwiartkę\\
+$M(s)=s^3+s^2-4s+9$\\
+$M(j\omega)=-j\omega^3-\omega^2-4j\omega+9=\underbrace{9-\omega^2}_{Re}+j\underbrace{(-\omega^3-4\omega)}_{Im}$\\
+$\omega=0 \Rightarrow M(j0)=9$\\
+\begin{figure}[!h]
+\begin{tikzpicture}
+	\draw [color=red, thick](2,0) arc (0:90:2 and 1.5);
+	\draw [color=red, thick](0,1.5) arc (90:180:1 and 1.5);
+	\draw [color=red, thick](-1,0) arc (180:220:1.5 and 3);
+
+	\draw[thick][->](-3,0)--(3,0) node [right=3pt]{$Re$};
+	\draw[thick][->](0,-3)--(0,3) node [right=3pt]{$Im$};
+
+	\draw (1.3,1.2) -- (2,1.2);
+	\draw (1.3,1.2) -- (1.5,1.3);
+	\draw (1.3,1.2) -- (1.5,1.1);
+
+	\node at(4.2,1.2){powinny być tak, żeby był a.s.};
+
+
+	\draw (-0.1,-2) -- (0.1,-2) node [left=3pt]{{-39}};
+	\draw (2,-0.1) -- (2,0.1) node [below=4pt]{{9}};
+\end{tikzpicture}
+\end{figure}
+\noindent\\
+spr. gdzie przecina $Im$ dla $Re=0$\\
+$9-\omega^2=0\Rightarrow\omega=3$\\
+$Im=-3^3-4\cdot 3=-39$ {\color{lightgray} ($Im$ powinno być dodatnie, aby układ był asymptotycznie stabilny)}\\
+spr. czy przecina oś $Re$ w przedziale $(-\infty, 0)$\\
+$Im=0\Rightarrow -\omega(\omega^2+4)=0$\\
+$\omega=0 \ \ \ \omega^2=-4$\\
+$Re=9+4=13$\\
+więc, układ nie jest asymptotycznie stabilny.
+
+%###################                 4.10.2              #################################%
+\pagebreak
+\subsection*{Zadanie 4.10.2} {\color{darkgray}
+	Korzystając z kryterium Michajłowa zbadać stabilność asymptotyczną układu opisanego transmitancją $G(s)$:\\
+	$G(s)=\frac{s^2+s+1}{s^3-s^2+2s-2}$\\
+}\lineh
+\\\\
+
+%  \left[\begin{array}{cc}\end{array}\right]
