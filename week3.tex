@@ -1,6 +1,26 @@
 \pagebreak
 \section*{Tydzień 3}
-Dyskretne systemy dynamiczne
+Dyskretne systemy dynamiczne\\
+\\
+Równanie różnicowe\\
+$x(i+1)=Ax(i)+Bu(i)$\\
+$y(i)=Cx(i)$\\
+rozwiązanie:\\
+$x(k)=A^kx(0)+\sum^{k-1}_{j=0}A^{k-1-j}Bu(j)$\\
+\\
+$A=PJP^{-1}$\\
+$A^n=(PJP^{-1})^n=PJ^nP^{-1}$\\
+\\
+Asymptotyczna stabilność:\\
+$\forall x(0), \ \ x(k)=A^kx(0)\rightarrow0, \text{ gdy } k\rightarrow \infty$\\
+\\
+\\
+$A^+=e^{hA}$\\
+$B^+=\int^h_0e^{tA}B \ dt$\\
+$C^+=C$\\
+
+
+\pagebreak
 %###################                 3.1.1              #################################%
 \subsection*{Zadanie 3.1.1} {\color{darkgray}
 	Narysować rozwiązanie równania różnicowego $x(k+1)=\lambda_ix(k)$\\
@@ -584,21 +604,6 @@ $=2^k\cdot \sum^{k-1}_{j=0}(\frac{1}{2})^j=2^k\cdot\frac{1-(\frac{1}{2})^k}{1-\f
 %###################                 3.3.1               #################################%
 \subsection*{Zadanie 3.3.1} {\color{darkgray}
 	Niech będzie dany układ ciągły opisany równaniem $\dot{x}(t)=ax(t)+bu(t)$\\
-	(a) Znaleźć rozwiązanie tego układu dla: $x(0)=0, u(t)=1, a=-4, b=3$.\\
-	(b) Znaleźć parametry układu dyskretnego, jeśli podł¡czono ekstrapolator pierwszego rzędu na wejściu
-	i impulsator na wyjściu, przy czym pracuj¡ one synchronicznie z okresem próbkowania $t = 1$. 
-	Rozwiązać powstały układ.\\
-	(c) Jak wyżej, przy założeniu $t = 12$.\\
-	(d) Narysować wszystkie rozwiązania na jednym układzie współrzędnych. Opisać różnice.\\
-}\lineh
-\\\\
-Brak rozwiązania
-
-
-\pagebreak
-%###################                 3.3.2               #################################%
-\subsection*{Zadanie 3.3.2} {\color{darkgray}
-	Niech będzie dany układ ciągły opisany równaniem $\dot{x}(t)=ax(t)+bu(t)$\\
 	(a) Znaleźć rozwiązanie tego układu dla: $x(0)=0, u(t)=1, a=-1, b=2$.\\
 	(b) Znaleźć parametry układu dyskretnego, jeśli podłączono ekstrapolator pierwszego rzędu na wejściu
 	i impulsator na wyjściu, przy czym pracują one synchronicznie z okresem próbkowania $t = 1$. 
@@ -616,7 +621,7 @@ $\ln |-x+2|=-t+c$\\
 $e^{-t+c}=-x+2$\\
 $e^{-t}e^c=-x+2$\\
 $ce^{-t}=-x+2$, bo $e^c$ to też stała\\
-
+\\
 $x(0)=c+2=0 \Rightarrow c=-2$\\
 $ce^{-t}=-x+2 \Rightarrow \boxed{x(t)=ce^{-t}+2=-2e^{-t}+2}$\\
 
@@ -685,6 +690,21 @@ $=2(e^{-10k}\cdot e^{10}-e^{-10}\cdot e^{-10k}\cdot e^{10})\cdot\frac{1-e^{10k}}
 
 
 
+%\pagebreak
+%###################                 3.3.2               #################################%
+%\subsection*{Zadanie 3.3.2} {\color{darkgray}
+%	Niech będzie dany układ ciągły opisany równaniem $\dot{x}(t)=ax(t)+bu(t)$\\
+%	(a) Znaleźć rozwiązanie tego układu dla: $x(0)=0, u(t)=1, a=-4, b=3$.\\
+%	(b) Znaleźć parametry układu dyskretnego, jeśli podłączono ekstrapolator pierwszego rzędu na wejściu
+%	i impulsator na wyjściu, przy czym pracują one synchronicznie z okresem próbkowania $t = 1$. 
+%	Rozwiązać powstały układ.\\
+%	(c) Jak wyżej, przy założeniu $t = 12$.\\
+%	(d) Narysować wszystkie rozwiązania na jednym układzie współrzędnych. Opisać różnice.\\
+%}\lineh
+%\\\\
+%Brak rozwiązania
+
+
 
 
 
@@ -705,7 +725,7 @@ $=2(e^{-10k}\cdot e^{10}-e^{-10}\cdot e^{-10k}\cdot e^{10})\cdot\frac{1-e^{10k}}
 	$A=\left[ \begin{array}{cc} 4&-2\\0&2\end{array}\right]$\\
 }\lineh
 \\\\
-$A^n=PJP^{-1}$\\
+$A=PJP^{-1}$\\
 $A^n=\underbrace{(PJP^{-1})(PJP^{-1})...(PJP^{-1})}_{n}$\\
 $A^n=PJ^nP^{-1}$\\
 $| [A-\lambda I] |=0$\\
@@ -841,15 +861,22 @@ $\Rightarrow A$ jest postaci Jordana $\Rightarrow J=A=\left[ \begin{array}{cc}  
 $e^J=e^P \cdot\left[ \begin{array}{cc}     \cos(q)&\sin(q)\\-\sin(q)& \cos(q)   \end{array}\right]$\\
 $e^J= \cdot\left[ \begin{array}{cc}     \cos(2\pi)&\sin(2\pi)\\-\sin(2\pi)& \cos(2\pi)   \end{array}\right]=\left[ \begin{array}{cc}     1&0\\0& 1   \end{array}\right]$\\
 $Pe^JP^{-1}=\left[ \begin{array}{cc}     1&0\\0& 1   \end{array}\right]$\\
-$B^+=\int^n_0e^{tA}B \ dt$\\
+$B^+=\int^h_0e^{tA}B \ dt$\\
 $B$ jest stałą\\
-$B^+=\int^n_0e^{tA} \ dt \ B$\\
-$\left| \begin{array}{c}tA=u-1\\t=uA \\dt=duA^{-1} \end{array}\right| B^+=\int_o^{hA}e^u\ du\ A^{-1}B=[e^{hA}-e^0]A^{-1}B$\\
-$e^{hA}=e^A=\left[ \begin{array}{cc}     1&0\\0& 1   \end{array}\right]$\\
-$e^0=1=J=\left[ \begin{array}{cc}     1&0\\0& 1   \end{array}\right]$\\
-$\Rightarrow B^+=0=\left[ \begin{array}{c}    0\\0    \end{array}\right]$\\
+{\color{red}
+%$B^+=\int^n_0e^{tA} \ dt \ B$\\
+%$\left| \begin{array}{c}tA=u-1\\t=uA \\dt=duA^{-1} \end{array}\right| B^+=\int_o^{hA}e^u\ du\ A^{-1}B=[e^{hA}-e^0]A^{-1}B$\\
+%$e^{hA}=e^A=\left[ \begin{array}{cc}     1&0\\0& 1   \end{array}\right]$\\
+%$e^0=1=J=\left[ \begin{array}{cc}     1&0\\0& 1   \end{array}\right]$\\
+%$\Rightarrow B^+=0=\left[ \begin{array}{c}    0\\0    \end{array}\right]$\\
+}
+$\int^h_0e^{tA}B\ dt=\int^h_0 \left[ \begin{array}{cc}   1&0\\0&1    \end{array}\right]\left[ \begin{array}{c}    0\\1    \end{array}\right]dt=\int^h_0 \left[ \begin{array}{c}    0\\1    \end{array}\right]dt$\\
+teraz $\int dt = t + c$ :\\ 
+całkujemy każdy element wektora:\\
+$h=1$\\
+$t\left.\left[ \begin{array}{c}    0\\1    \end{array}\right]\right|^1_0 = 1\left[ \begin{array}{c}    0\\1 \end{array}\right]-0\left[ \begin{array}{c}    0\\1    \end{array}\right]=\left[ \begin{array}{c}    0\\1    \end{array}\right]$\\
 $x^+(i+1)=A^+x^+(i)+B^+u^+(i)$\\
-$x^+(i+1)=\left[ \begin{array}{cc}    1&0\\0&1    \end{array}\right]x^+(i)$\\
+$x^+(i+1)=\left[ \begin{array}{cc}    1&0\\0&1    \end{array}\right]x^+(i)+\left[ \begin{array}{c}    0\\1    \end{array}\right]u^+(i)$\\
 
 
 \pagebreak
@@ -871,7 +898,7 @@ $u^+(i)=u(ih)=u(i)$\\
 $A^+=e^{hA}$\\
 A jest w postaci Jordana, więc $A=J$\\
 $A^+=e^{hJ}=e^J=\left[ \begin{array}{ccc}     e^{-0.5}&0&0\\0&e^{-1}&0\\0&0&e^{-2}    \end{array}\right]$\\
-$B^+=\int_0^he^{tA}B \ dt = \int_0^1\left[ \begin{array}{ccc}     e^{-0.5}&0&0\\0&e^{-1}&0\\0&0&e^{-2}    \end{array}\right]   
+$B^+=\int_0^he^{tA}B \ dt = \int_0^1\left[ \begin{array}{ccc}     e^{-\frac t2}&0&0\\0&e^{-t}&0\\0&0&e^{-2t}    \end{array}\right]   
 \left[ \begin{array}{c}     1\\1\\1    \end{array}\right] dt
 = \int_0^1\left[ \begin{array}{c}   e^{-\frac{t}{2}} \\e^{-t} \\ e^{-2t}   \end{array}\right] dt$\\
 $=\left[ \begin{array}{r}   -2e^{-\frac{t}{2}}|_0^1 \\-e^{-t}|_0^1 \\-\frac{1}{2} e^{-2t}|_0^1   \end{array}\right]
@@ -890,9 +917,9 @@ $C^+=C=\left[ \begin{array}{ccc}     1&4&5\\3&1&9    \end{array}\right]$\\
 \\\\
 $A=-2\ \ \ \ B=1\ \ \ \ \ C=-2$\\
 $A^+=e^{Ah}=e^{-2}$\\
-$B^+=\int_0^he^{tA}B\ dt=\int_0^he^{-2t}\ dt=|-\frac{1}{2}e^{-2t}|^h_0=-\frac{1}{2}e^{-2}$\\
+$B^+=\int_0^he^{tA}B\ dt=\int_0^he^{-2t}\ dt=|-\frac{1}{2}e^{-2t}|^h_0=-\frac{1}{2}e^{-2}+\frac12$\\
 $C^+=C=-2$\\
-$\boxed{A^+=e^-2\ \ \ \ \ \ \ B^+=-\frac{1}{2}e^{-2}\ \ \ \ \ \ \ C^+=-2}$
+$\boxed{A^+=e^-2\ \ \ \ \ \ \ B^+=-\frac{1}{2}e^{-2}+\frac12\ \ \ \ \ \ \ C^+=-2}$
 
 
 
@@ -997,7 +1024,7 @@ $a_1>0 \wedge a_1a_0>0$ - spełnione dla W.K.\\
 }\lineh
 \\\\
 $\lambda_1 = k_1-k_2 \ \ \vee \  \ \lambda_2=k_1+k_2 \ \ \vee \ \ \lambda_3=k_1^2+k_2^2$\\
-dyskretny system liniowy jesy asymprotycznie stabilny $\Leftrightarrow$ wartości własne macierzy $A$ leżą w kole jednostkowym o środku w zerze na płasczyźnie zespolonej (wystarczy sprawdzić warunek $|\lambda_i|<1$, nie trzeba z Hurwitza)\\
+dyskretny system liniowy jest asymptotycznie stabilny $\Leftrightarrow$ wartości własne macierzy $A$ leżą w kole jednostkowym o środku w zerze na płaszczyźnie zespolonej (wystarczy sprawdzić warunek $|\lambda_i|<1$, nie trzeba z Hurwitza)\\
 \\
 $\bullet\ \ \lambda_1 = k_1-k_2 $\\
 $\begin{array}{ccc}   k_1-k^2<1 & \wedge &k_1-k_2>-1 \\ k_2>k_1-1 & \wedge & k_2<k_1+1    \end{array}$\\
@@ -1189,11 +1216,11 @@ k_1>2\sqrt{2} \vee k_1<-2\sqrt{2} & &                     \text{sprzeczne}\\
 $\bullet\ \ \lambda=-2 - \sqrt{1+k_1^2}$\\
 $ \begin{array}{ccc}
 -2 - \sqrt{1+k_1^2}>1                &\vee&    -2 - \sqrt{1+k_1^2}<-1  \\
-\sqrt{1+k_1^2}>-3                           & &         \sqrt{1+k_1^2}>-1 \\
+\sqrt{1+k_1^2}<-3                           & &         \sqrt{1+k_1^2}>-1 \\
 \text{sprzeczne}                                & &                  k_1 \in \mathbb{R}
 \end{array} $\\
 \\\\
-$\lambda=-2 + \sqrt{1+k_1^2} \vee \lambda=-2 - \sqrt{1+k_1^2} \Rightarrow k_1 \in \mathbb{R}$
+$k_1>2\sqrt{2} \vee k_1<-2\sqrt{2} \vee  k_1 \in \mathbb{R} \Rightarrow k_1 \in \mathbb{R}$
 
 \pagebreak
 %###################                 3.7.3              #################################%

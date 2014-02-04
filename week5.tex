@@ -1,6 +1,34 @@
 \pagebreak
 \section*{Tydzień 5}
-Wprowadzenie do układów nieliniowych - Linearyzacja
+Wprowadzenie do układów nieliniowych - Linearyzacja\\
+\\
+\fbox{\parbox{.5\linewidth}{
+\textbf{I metoda Lapunowa} \\
+Punkt równowagi, dla którego system zlinearyzowany jest asymptotycznie stabilny jest lokalnie asymptotycznie stabilny. Jeżeli zaś chociaż jedna z wartości własnych macierzy systemu zlinearyzowanego ma dodatnią część rzeczywistą to punkt równowagi jest niestabilny.
+}}\\
+\\
+\fbox{\parbox{.5\linewidth}{
+\textbf{Macierz Hurwitz'a} \\
+Wielomian charakterystyczny: $a_0\lambda^n+a_1\lambda^{n-1}+a_{n-1}\lambda+a_n$\\
+$\left[ \begin{array}{cccccc}  
+ a_1&a_3&a_5&a_7&\cdots&0\\
+ a_0&a_2&a_4&a_6&\cdots&0\\
+     0&a_1&a_3&a_5&\cdots&0\\
+     0&a_0&a_2&a_4&\cdots&0\\
+     0&    0&a_1&a_3&\cdots&0\\
+\vdots&\vdots&\vdots&\vdots&\ddots&\vdots\\
+0&0&0&0&\cdots&a_n
+ \end{array}\right]$\\\\
+\textbf{Kryterium Hurwitz'a} \\
+Jeśli wszystkie minory wiodące są większe od zera, to jest asymptotycznie stabilny.
+}}\\\\
+\fbox{\parbox{.5\linewidth}{
+\textbf{tw. Grobmana-Hartmana:}\\
+Jeżeli $\det(j\omega I-J(x_r)) \neq 0, \ \ \ \omega \in \mathbb{R}, \ \ \ j^2=-1$\\
+to trajektorie fazowe systemu nieliniowego w pewnym otoczeniu równowagi zachowują się podobnie jak trajektorie układu zlinearyzowanego w tym punktcie w otoczeniu zera. Warunek jest równoważny temu, że macierz $J(x_r)$ nie może posiadać wartości własnych na osi urojonej.
+}}\\\\
+
+\pagebreak
 %###################                 5.1.1              #################################%
 \subsection*{Zadanie 5.1.1} {\color{darkgray}
 	Dany jest system dynamiczny\\
