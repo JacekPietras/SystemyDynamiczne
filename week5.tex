@@ -27,6 +27,13 @@ Jeśli wszystkie minory wiodące są większe od zera, to jest asymptotycznie st
 Jeżeli $\det(j\omega I-J(x_r)) \neq 0, \ \ \ \omega \in \mathbb{R}, \ \ \ j^2=-1$\\
 to trajektorie fazowe systemu nieliniowego w pewnym otoczeniu równowagi zachowują się podobnie jak trajektorie układu zlinearyzowanego w tym punktcie w otoczeniu zera. Warunek jest równoważny temu, że macierz $J(x_r)$ nie może posiadać wartości własnych na osi urojonej.
 }}\\\\
+\\
+\textbf{Lapunowem zbadać stabilność punktów równowagi} \\
+1. wyznaczamy punkt równowagi. Przyrównujemy równanie układu do zera.\\
+2. Podstawiamy do macierzy Jacobiego punkt\\
+$\left[ \begin{array}{cc}    \frac{\partial f_1}{\partial x_1} &\frac{\partial f_1}{\partial x_2} \\ \frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2}   \end{array}\right]$\\
+3. Wyliczamy wartości własne macierzy Jacobiego i sprawdzamy czy ich część rzeczywista jest mniejsza od 0. Jeśli tak to punkt jest lokalnie asymptotycznie stabilny. Jeśli nie to punkt równowagi jest niestabilny.\\
+Jeśli wyjdzie 0 to "Twierdzenie to nie rozstrzyga o stabilności punktu równowagi, jeżeli system zlinearyzowany jest jedynie stabilny"
 
 \pagebreak
 %###################                 5.1.1              #################################%
@@ -83,7 +90,7 @@ J(x_r)=\left[ \begin{array}{cc}  0&1\\-2&-1    \end{array}\right] && J(x_r)=\lef
 =(-\lambda)(-1-\lambda)+2=\lambda^2+\lambda+2&&=(-\lambda)(-1-\lambda)-2=\lambda^2+\lambda-2\\
 \Delta=-7&&\Delta=9\\
 \lambda=-\frac 12 \pm \frac{\sqrt 7}{2}i&&\lambda=\frac{-1 \pm 3}{2}\\
-\lambda = -\frac 12 >0 \Rightarrow \text{Stabilny} && \lambda = 1 \ \ \vee \ \ \lambda=-2\\
+\lambda = -\frac 12 <0 \Rightarrow \text{Stabilny} && \lambda = 1 \ \ \vee \ \ \lambda=-2\\
  && \lambda = 1 >0 \Rightarrow \text{Niestabilny}
 \end{array}$\\
 

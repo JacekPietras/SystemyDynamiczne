@@ -1,0 +1,78 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage[polish]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{anysize}
+\usepackage{enumerate}
+%\usepackage{color}
+%\usepackage{circuitikz}
+%\usepackage{multicol}
+%\tikzset{>=latex}
+%\usetikzlibrary{patterns}
+
+%\usepackage{siunitx}
+%\usepackage{mathrsfs}
+%\usepackage{cancel}
+
+
+\marginsize{1cm}{1cm}{1cm}{1cm}
+%\sloppy 
+
+\begin{document}
+\noindent
+$x(k)=Cz_1^k+Dz_2^k$ dla rekur.\\
+\\
+$x(t)=Pe^{Jt}P^{-1}x(0)$\\
+$x(t)=e^{tA}x_0+\int^t_0e^{(t-r)A}Bu(r) dr$\\
+$x(k)=A^kx(0)+\sum^{k-1}_{j=0}A^{k-1-j}Bu(j)$\\
+\\
+$\lambda_1 \neq \lambda_2 \ \ \ x = c_1e^{\lambda_1t}+c_2e^{\lambda_2t}$\\
+$\lambda_1 =  \lambda_2 \ \ \ x = c_1e^{\lambda t}+c_2e^{\lambda t}t$\\
+$\lambda_{1,2} =p \pm iq  \ \ \ x = c_1e^{p t}\cos qt+c_2e^{p t} \sin qt$\\
+\\
+$A^+=e^{hA} \ \ \ $
+$B^+=\int^h_0e^{tA}B dt \ \ \ $%\ \ \ C^+=C$\\
+$x^+(i)=x(ih)$\\
+$x^+(i+1)=A^+x^+(i)+B^+u^+(i)$\\
+%$e^{At}=P\cdot e^{Jt}\cdot P^{-1}$\\
+$e^{tJ}=e^{a t}\left[\begin{array}{cc}\cos bt&\sin bt\\-\sin bt& \cos t\end{array}\right]$ lub $\left[\begin{array}{cc}e^{\lambda_1 t}&0\\0&e^{\lambda_2 t}\end{array}\right]$\\
+\\
+$\lambda=\frac{z+1}{z-1} \rightarrow L(z) = \text{ licznik} \rightarrow \text{wsp} >0 \Rightarrow$ as. stab.\\
+$|\lambda_i|<1$ lub minor Hurw.$>0 \Rightarrow$ as. stab.\\
+$\Delta(\lambda)<0$  oscylacje / zanikanie\\
+\\
+$G(s)=C(sI-A)^{-1}B$\\
+%$A(\omega)=|G(j\omega)|$\\
+%$u(t)=A_u\sin(\omega t+\varphi_u )$ - wejście\\
+%$A_y=A(\omega) \cdot A_u$ - amp. wyjscia\\
+$Y(s)=G(s) \cdot U(s)$, $U(s)=\frac 1 s  $ dla sk. jed.\\
+$\mathcal{L}\{a\}=a\frac 1 s \ \ \ \ \mathcal{L}\{ae^{bt}\}=a\frac {1}{s-b}$\\
+$\ddot{x} \rightarrow s^2Y(s)\ \ \ \ \ \ \ \ \ $Michajłow - $M(j\omega)$\\
+\\
+GH : $\det(j\omega I-J(x_r)) \neq 0$\\
+L : $\dot{x}_{1,2}=0 \rightarrow x_r$, $|J(x_r)-\lambda|$, $Re(\lambda)<0$\\ 
+\\
+%$\left[\begin{array}{cc}a&0\\0&b\end{array}\right], \lambda=a,b\ \ \ \ \left[\begin{array}{cc}a&1\\0&a\end{array}\right], \lambda=a \ \ \ \ \left[\begin{array}{cc}a&b\\-b&a\end{array}\right], \lambda=a \pm bi$\\
+$A^n=PJ^nP^{-1}$\\
+$J^n=(\sqrt{a^2+b^2})^n \left[ \begin{array}{cc}     \cos n\varphi&\sin n \varphi\\-\sin n \varphi&\cos n \varphi    \end{array}\right]$\\
+\\\\
+$\left[\begin{array}{cc}-1&0\\0&-1\end{array}\right]$ gwiazda, $\left[\begin{array}{cc}-1&0\\0&0\end{array}\right]$ poziome\\
+$\left[\begin{array}{cc}-1&1\\0&-1\end{array}\right]$ węzeł zdeg., $\left[\begin{array}{cc}-1&0\\0&-2\end{array}\right]$ węzeł\\\\
+$\left[\begin{array}{cc}-1&1\\-1&-1\end{array}\right]$ ognisko, $\left[\begin{array}{cc}0&1\\-1&0\end{array}\right]$ kółka\\
+\\\\
+$y=u_r=RC\dot{u}_c$
+$\ \ \ u-u_c-u_r=0 \rightarrow \mathcal{L}$ ?\\
+$i=c\dot{x} \ \ \ u-Ri-x=0$\\
+$G(s)=X(s)/[\ddot{x}\rightarrow s^2X(s)] \ \ |G(j\omega)|=max$\\
+$m=M\frac xl \ \ \ M\ddot{x}=mg \ \ \ \dot{x}_2=\ddot{x}=x_1\frac gl$\\
+$G(j\omega)=a+bi \ \ \ \ \varphi=\text{arctg}\frac ba$\\
+$A^n=0 \Rightarrow x(n)=A^nx(0)=0$\\
+$\int -\frac12te^{-t}=\frac12te^{-t}+\frac12e^{-t}$
+\end{document}
+
+
+

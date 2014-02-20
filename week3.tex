@@ -14,7 +14,9 @@ $A^n=(PJP^{-1})^n=PJ^nP^{-1}$\\
 Asymptotyczna stabilność:\\
 $\forall x(0), \ \ x(k)=A^kx(0)\rightarrow0, \text{ gdy } k\rightarrow \infty$\\
 \\
-\\
+\textbf{Parametry systemu dyskretnego odpowiadającemu połączeniu eksploratora rzędu zerowego na wejściu i impulsatora na wyjściu}\\
+Sprawdzamy czy $A$ nie jest w postaci kanonicznej Jordana ($A^+=e^{hJ}=e^{hA}$)\\
+Jeśli nie, wartości własne, wektory własne, macierze P, J. Następnie $e^{Jt}=e^{\lambda}J$. Następnie $e^{At}=Pe^{Jt}P^{-1}$\\
 $A^+=e^{hA}$\\
 $B^+=\int^h_0e^{tA}B \ dt$\\
 $C^+=C$\\
@@ -844,11 +846,11 @@ $\\
 	podłączono ekstrapolator rzędu zerowego na wejściu i impulsator na wyjściu, przy czym pracują one synchronicznie z okresem próbkowania $h = 1 s$. Wyliczyć parametry systemu dyskretnego odpowiadające takiemu połączeniu.\\
 }\lineh
 \\\\
-$\dot{x}_1(t)=\left[ \begin{array}{cc}     0&2\pi\\-2\pi&0    \end{array}\right]_Ax(t)+\left[ \begin{array}{c}     0\\1    \end{array}\right]_Bu(t)$\\
+$\dot{x}(t)=\left[ \begin{array}{cc}     0&2\pi\\-2\pi&0    \end{array}\right]_Ax(t)+\left[ \begin{array}{c}     0\\1    \end{array}\right]_Bu(t)$\\
 $x^+(vi)=A^+x^+(i)+B^+u^+(i), h=1s$\\
 $A^+=e^{hA}$\\
 $A^+=e^{A}=Pe^JP^{-1}$\\
-$\left[ \begin{array}{cc}     -\lambda&2\pi\\-2pi&-\lambda    \end{array}\right]=0 \Leftrightarrow \begin{array}{l}\lambda^2+4\pi^2=0 \\ \lambda=-4\pi^2 \\ \lambda_{1,2}=\pm 2\pi i\end{array} \begin{array}{l} \\ \\{\color{darkgray} (p=0, q=2\pi)} \end{array}$\\
+$\left[ \begin{array}{cc}     -\lambda&2\pi\\-2\pi&-\lambda    \end{array}\right]=0 \Leftrightarrow \begin{array}{l}\lambda^2+4\pi^2=0 \\ \lambda=-4\pi^2 \\ \lambda_{1,2}=\pm 2\pi i\end{array} \begin{array}{l} \\ \\{\color{darkgray} (p=0, q=2\pi)} \end{array}$\\
 $\left[ \begin{array}{cc}     -2\pi i& \boxed{2\pi } \\-2\pi&-2\pi i    \end{array}\right]
 \left[ \begin{array}{c}   \omega_{11}  \\ \omega_{12}   \end{array}\right] =0$\\
 $\begin{array}{r}\omega_{11} \in \mathbb{R}\\
@@ -858,8 +860,8 @@ $\begin{array}{r}\omega_{11} \in \mathbb{R}\\
 \omega_{11}\left[ \begin{array}{c}     1\\0    \end{array}\right]+ i\omega_{11}\left[ \begin{array}{c}     0\\1    \end{array}\right]$\\
 $\Rightarrow P=\left[ \begin{array}{cc}     1&0\\0&1    \end{array}\right]=P^{-1}=I$\\
 $\Rightarrow A$ jest postaci Jordana $\Rightarrow J=A=\left[ \begin{array}{cc}     0&2\pi\\-2\pi&0    \end{array}\right]$\\
-$e^J=e^P \cdot\left[ \begin{array}{cc}     \cos(q)&\sin(q)\\-\sin(q)& \cos(q)   \end{array}\right]$\\
-$e^J= \cdot\left[ \begin{array}{cc}     \cos(2\pi)&\sin(2\pi)\\-\sin(2\pi)& \cos(2\pi)   \end{array}\right]=\left[ \begin{array}{cc}     1&0\\0& 1   \end{array}\right]$\\
+$e^J=e^p \cdot\left[ \begin{array}{cc}     \cos(q)&\sin(q)\\-\sin(q)& \cos(q)   \end{array}\right]$\\
+$e^J= \left[ \begin{array}{cc}     \cos(2\pi)&\sin(2\pi)\\-\sin(2\pi)& \cos(2\pi)   \end{array}\right]=\left[ \begin{array}{cc}     1&0\\0& 1   \end{array}\right]$\\
 $Pe^JP^{-1}=\left[ \begin{array}{cc}     1&0\\0& 1   \end{array}\right]$\\
 $B^+=\int^h_0e^{tA}B \ dt$\\
 $B$ jest stałą\\
@@ -915,11 +917,10 @@ $C^+=C=\left[ \begin{array}{ccc}     1&4&5\\3&1&9    \end{array}\right]$\\
 	podłączono ekstrapolator rzędu zerowego na wejściu i impulsator na wyjściu, przy czym pracują one synchronicznie z okresem próbkowania $h = 1 s$. Wyliczyć parametry systemu dyskretnego odpowiadające takiemu połączeniu.\\
 }\lineh
 \\\\
-$A=-2\ \ \ \ B=1\ \ \ \ \ C=-2$\\
-$A^+=e^{Ah}=e^{-2}$\\
-$B^+=\int_0^he^{tA}B\ dt=\int_0^he^{-2t}\ dt=|-\frac{1}{2}e^{-2t}|^h_0=-\frac{1}{2}e^{-2}+\frac12$\\
-$C^+=C=-2$\\
-$\boxed{A^+=e^-2\ \ \ \ \ \ \ B^+=-\frac{1}{2}e^{-2}+\frac12\ \ \ \ \ \ \ C^+=-2}$
+$A^+=e^{At}$\\
+$B^+=0$\\
+$C^+=0$\\
+reszta jak w 2.7.1 tylko $t=1$
 
 
 
@@ -1078,7 +1079,7 @@ $\lambda_1 = k_1-k_2 \ \ \wedge \  \ \lambda_2=k_1+k_2 \ \ \wedge \ \ \lambda_3=
 $|A- \lambda I|=0$\\
 $\left[ \begin{array}{cc}    -k_2-\lambda&k_1\\-k_1&-k_2-\lambda    \end{array}\right]=(k_2+\lambda)^2+k_1^2=(k_2+\lambda)^2-(ik_1)^2=(\lambda +k_2+ik_1)\cdot (\lambda+k_2-ik_1)=0$\\
 \\
-$\lambda=-k_2 \pm k_1$\\
+$\lambda=-k_2 \pm ik_1$\\
 Układ jest asymptotycznie stabilny, gdy wartości własne macierzy leżą wewnątrz koła jednostkowego na płaszczyźnie zespolonej o środku w zerze.\\
 $|\lambda |<1$\\
 $|\lambda|=\sqrt{(-k_2)^2+k_1^2}$\\
@@ -1128,7 +1129,7 @@ $k_1^2+k_2^2<1$\\
 	będzie niestabilny.\\
 }\lineh
 \\\\
-$(-0.5k_1-2)(-k_1-\lambda)=0$\\
+$(-0.5k_1-\lambda)(-k_1-\lambda)=0$\\
 $0.5k_1^2+0.5k_1\lambda+k_1\lambda+\lambda^2=0$\\
 $\lambda^2+1.5k_1\lambda+0.5k_1^2=0$\\
 $\lambda=\frac{z+1}{z-1}$\\
@@ -1260,7 +1261,7 @@ $k_1>\frac{\sqrt{2}}{2}$\\
 }\lineh
 \\\\
 zakładam rozwiązanie postaci $z^n$\\
-$x^n, +z^{n-1}+2z^{n-2}=0$\\
+$z^n+z^{n-1}+2z^{n-2}=0 \ |:z^{n-2}$\\
 $z^2+z-2=0$ - wielomian charakterystyczny\\
 $W(z)=(z+2)(z-1)$\\
 $z_1=-2, \ \ z_2=1$\\
@@ -1360,7 +1361,7 @@ $\left[ \begin{array}{ccccc}    -\lambda&\cdots&0&0&0 \\  1&\cdots&0&0&0 \\\vdot
 Z Tw. Cagleya-Hamiltona wiadomo, że każda macierz spełnia swój wielomian charakterystyczny\\
 $A^n=0 $\\\\
 rozwiązanie równania $x(k+1)=Ax(k)$ ma postać $x(k)=A^kx(0)$ czyli $x(n)=A^nx(0)=0$\\
-Biorąc więc pod uwagę fakt $A^n=0 $ wiadomo, że rozwiązanie x(k) stanie się zerem w cco najwyżej n krokach, niezależnie od warunku początkowego $x(0)$
+Biorąc więc pod uwagę fakt $A^n=0 $ wiadomo, że rozwiązanie x(k) stanie się zerem w co najwyżej n krokach, niezależnie od warunku początkowego $x(0)$
 
 \pagebreak
 %###################                 3.9.2              #################################%
